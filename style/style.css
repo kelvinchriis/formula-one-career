@@ -1,0 +1,162 @@
+@font-face {
+    font-family: 'f1';
+    src: url('../assets/fonts/Formula1-Bold_web_0.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'f2';
+    src: url('../assets/fonts/Formula1-Regular_web_0.ttf') format("truetype");
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background-color: rgb(134, 128, 128);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.5));
+    height: 20px;
+}
+
+body {
+    margin: 0;
+    background-color: #e4e7eb;
+}
+
+img {
+    width: 95%;
+}
+
+.menu {
+    display: flex; 
+    flex-direction: column;
+    align-items: center;
+    width: 15%;
+    background-color: rgb(77, 71, 67); 
+    height: 150vh;
+    position: fixed;
+}
+
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 0 0 0 17.5%;
+}
+
+.box-car {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 20px;
+    border-radius: 30px;
+    margin: 20px;
+    height: 140px;
+    width: 300px;
+    background-color: #F7F4F1;
+    /* background: linear-gradient(rgba(97, 48, 48, 0.08), rgba(97, 48, 48, 0.08), rgba(77, 71, 67, 0.548)); */
+    cursor: pointer;
+    /* box-shadow: 1px 1px 10px rgba(77, 71, 67, 0.548); */
+    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
+    transition: 0.5s;
+}
+
+.box-car:hover {
+    background-color: rgba(105, 53, 50, 0.568);
+}
+
+.box-escuderia {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 20px;
+    border-radius: 30px;
+    margin: 20px;
+    height: 140px;
+    width: 300px;
+    background-color: #F7F4F1;
+    /* background: linear-gradient(rgba(97, 48, 48, 0.08), rgba(97, 48, 48, 0.08), rgba(77, 71, 67, 0.548)); */
+    cursor: pointer;
+    /* box-shadow: 1px 1px 10px rgba(77, 71, 67, 0.548); */
+    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
+    transition: 0.5s;
+}
+
+.box-escuderia:hover {
+    background-color: #bdb4ab;
+}
+
+label {
+    margin-bottom: 10px;
+    font-size: 12pt;
+    font-weight: 500;
+    font-family: 'f2', sans-serif;
+}
+
+h1 {
+    font-family: 'formula1-display-bold', sans-serif;
+    margin: 40px 0
+}
+
+button {
+    margin-top: 10px;
+    height: 40px;
+    padding: 9px 20px;
+    border-radius: 20px;
+    border-color: transparent;
+    box-shadow: 1px 1px 10px black
+}
+
+.card {
+    display: flex;
+    width: 300px;
+    height: 420px;
+    background-color: #F7F4F1;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px 10px 3px 10px;
+    border-radius: 20px;
+    margin: 20px;
+    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
+}
+
+h2 {
+    margin: 0;
+    font-family: 'f1', sans-serif;
+    font-size: 14pt;
+    font-weight: 300;
+}
+
+.line-card {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 5% 15px 5%;
+}
+
+.line-card-end {
+    width: 100%;
+}
+
+.data-card {
+    padding: 0 5px 5px 0;
+    margin-right: 8px;
+    border-right: 2px solid rgba(0, 0, 0, 0.2);
+    border-bottom: 2px solid rgba(0, 0, 0, 0.2);
+    border-radius: 0 0 10px;
+}
+
+.data-card-end {
+    width: 260px;
+}
+
+span {
+    font-size: 7pt;
+    font-family: 'f2', sans-serif;
+}
