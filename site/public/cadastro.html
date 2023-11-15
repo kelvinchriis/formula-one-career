@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>cadastro</title>
+    <link rel="stylesheet" href="style/cadastro.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="content">
+            <input type="text" placeholder="Nome" id="inputNome">
+            <input type="email" placeholder="Email" id="inputEmail">
+            <input type="password" placeholder="Senha" id="inputSenha">
+            <button onclick="cadastrar()">Cadastrar</button>
+        </div>
+    </div>
+</body>
+</html>
+<script>
+    function cadastrar() {
+  
+      //Recupere o valor da nova input pelo nome do id
+      // Agora vá para o método fetch logo abaixo
+      var nomeVar = inputNome.value;
+      var emailVar = inputEmail.value;
+      var senhaVar = inputSenha.value;
+
+      if ( nomeVar == "" || emailVar == "" ||senhaVar == "") {
+        alert("Coloque algo campo vazio")
+        return false;
+      } else {
+        // setInterval(sumirMensagem, 5000);
+      }
+  
+      // Enviando o valor da nova input
+      fetch("/usuarios/cadastrar", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          // crie um atributo que recebe o valor recuperado aqui
+          // Agora vá para o arquivo routes/usuario.js
+          nomeServer: nomeVar,
+          emailServer: emailVar,
+          senhaServer: senhaVar,
+        }),
+      })
+        .then(function (resposta) {
+          console.log("resposta: ", resposta);
+  
+          if (resposta.ok) {
+  
+            setTimeout(() => {
+              window.location = "login.html";
+            }, "2000");
+  
+          } else {
+            throw "Houve um erro ao tentar realizar o cadastro!";
+          }
+        })
+        .catch(function (resposta) {
+          console.log(`#ERRO: ${resposta}`);
+        });
+  
+      return false;
+    }
+  
+  </script>
