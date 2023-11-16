@@ -29,27 +29,38 @@ var width = window.innerWidth;
             header.style.boxShadow = "0 1px 20px rgba(0, 0, 0, 0)"
         }
 
-        //mudar posição carro ferrari 1
-        var margem1 = position + (position / 4) - 600;
-        // mostrar.innerHTML = `${margem1} e ${sideFer*-0.3}`
-
-        if (position_now>=init_div*0.3 && margem1<=(sideFer*-0.3)) {
-            car1.style.marginRight = `${margem1}px`
-        } else if(position_now < init_div*0.3) {
-            car1.style.marginRight = `-500px`
-        } else{
-            car1.style.marginRight = `-${sideFer*0.3}px`
+        if (init_div * 0.80 >= position_now) {
+            car1.style.marginRight = `${(position + position / 4) - 600}px`
+        } else {
+            car1.style.marginRight = `-250px`
         }
 
-        //mudar posição carro mclaren 2
-        var margem2 = position + (position / 2) - 1000
-        // mostrar.innerHTML = `${margem2} e ${sideMc*-0.3}`
-
-        if (position_now >= init_div*0.1 && margem2 <= sideMc*-0.3)  {
+        if (position_now >= init_div / 2 && init_div * 1.4 >= position_now) {
             car2.style.marginLeft = `${(position + position / 2) - 1000}px`
         } else {
-            car2.style.marginLeft = `-${sideMc*0.3}px`
+            car2.style.marginLeft = `-240px`
         }
+        //mudar posição carro ferrari 1
+        //var margem1 = position + (position / 4) - 600;
+        // mostrar.innerHTML = `${margem1} e ${sideFer*-0.3}`
+
+        // if (position_now>=init_div*0.3 && margem1<=(sideFer*-0.3)) {
+        //     car1.style.marginRight = `${margem1}px`
+        // } else if(position_now < init_div*0.3) {
+        //     car1.style.marginRight = `-500px`
+        // } else{
+        //     car1.style.marginRight = `-${sideFer*0.3}px`
+        // }
+
+        //mudar posição carro mclaren 2
+        // var margem2 = position + (position / 2) - 1000
+        // mostrar.innerHTML = `${margem2} e ${sideMc*-0.3}`
+
+        // if (position_now >= init_div*0.1 && margem2 <= sideMc*-0.3)  {
+        //     car2.style.marginLeft = `${(position + position / 2) - 1000}px`
+        // } else {
+        //     car2.style.marginLeft = `-${sideMc*0.3}px`
+        // }
 
 
         //line up grid
