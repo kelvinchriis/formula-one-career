@@ -15,333 +15,367 @@
 </head>
 
 <body>
+    <div class="overlay-container" style="background-color: brown; z-index: 6;" id="loading_page"></div>
     <div style="display: flex; width: 100%;">
         <div class="menu">
             <button onclick="escuderias()" style="display: none;" id="botao_escuderias">Voltar</button>
         </div>
     </div>
     <div style="width: 100%; overflow: hidden;">
-        <div class="main" id="escuderiass" style="justify-content: center; margin-top: 40px;">
-            <div class="table-classificacao">
-                <h1 class="h1-title-block">Classificação temporada 2023</h1>
-                <div style="width: 90%; display: flex;">
-                    <!-- left -->
-                    <div style="width: 50%; margin-right: 15px;">
-                        <div class="position-pilot" style="margin-top: 0;">
-                            <img src="assets/pilotos/Max Verstappen 1.avif" alt="Foto Piloto 2"
-                                style="margin-right: 45%;">
-                            <div style="width: 160px; position: absolute; text-align: right;">
-                                <h1 class="h1-pilots">1º</h1>
-                                <h2 style="font-size: 10pt;">Max Verstappen</h2>
-                                <h2 class="h2-pilots">524 pontos</h2>
-                                <h2 class="h2-pilots">17 vitórias</h2>
-                                <h2 class="h2-pilots">19 pódios</h2>
-                            </div>
-                        </div>
-                        <div class="position-pilot">
-                            <img src="assets/pilotos/Lewis Hamilton 44.avif" alt="Foto Piloto 2"
-                                style="margin-right: 45%;">
-                            <div style="width: 160px; position: absolute; text-align: right;">
-                                <h1 class="h1-pilots">3º</h1>
-                                <h2 style="font-size: 10pt;">Lewis Hamilton</h2>
-                                <h2 class="h2-pilots">226 pontos</h2>
-                                <h2 class="h2-pilots">0 vitórias</h2>
-                                <h2 class="h2-pilots">6 pódios</h2>
-                            </div>
-                        </div>
-                        <div class="position-pilot">
-                            <img src="assets/pilotos/Lando Norris 4.avif" alt="Foto Piloto 2"
-                                style="margin-right: 45%;">
-                            <div style="width: 160px; position: absolute; text-align: right;">
-                                <h1 class="h1-pilots">5º</h1>
-                                <h2 style="font-size: 10pt;">Lando Norris</h2>
-                                <h2 class="h2-pilots">195 pontos</h2>
-                                <h2 class="h2-pilots">0 vitórias</h2>
-                                <h2 class="h2-pilots">7 pódios</h2>
-                            </div>
-                        </div>
-                        <div class="position-pilot">
-                            <img src="assets/pilotos/Charles Leclerc 16.avif" alt="Foto Piloto 2"
-                                style="margin-right: 45%;">
-                            <div style="width: 160px; position: absolute; text-align: right;">
-                                <h1 class="h1-pilots">7º</h1>
-                                <h2 style="font-size: 10pt;">Charles Leclerc</h2>
-                                <h2 class="h2-pilots">170 pontos</h2>
-                                <h2 class="h2-pilots">0 vitórias</h2>
-                                <h2 class="h2-pilots">4 pódios</h2>
-                            </div>
-                        </div>
-                        <div class="position-pilot">
-                            <img src="assets/pilotos/Oscar Piastri 81.avif" alt="Foto Piloto 2"
-                                style="margin-right: 45%;">
-                            <div style="width: 160px; position: absolute; text-align: right;">
-                                <h1 class="h1-pilots">9º</h1>
-                                <h2 style="font-size: 10pt;">Oscar Piastri</h2>
-                                <h2 class="h2-pilots">87 pontos</h2>
-                                <h2 class="h2-pilots">0 vitórias</h2>
-                                <h2 class="h2-pilots">2 pódios</h2>
-                            </div>
-                        </div>
-                        <div class="position-pilot">
-                            <img src="assets/pilotos/Pierre Gasly 10.avif" alt="Foto Piloto 2"
-                                style="margin-right: 45%;">
-                            <div style="width: 160px; position: absolute; text-align: right;">
-                                <h1 class="h1-pilots">11º</h1>
-                                <h2 style="font-size: 10pt;">Pierre Gasly</h2>
-                                <h2 class="h2-pilots">62 pontos</h2>
-                                <h2 class="h2-pilots">0 vitórias</h2>
-                                <h2 class="h2-pilots">1 pódios</h2>
-                            </div>
-                        </div>
-                        <div class="position-pilot">
-                            <img src="assets/pilotos/Esteban Ocon 31.avif" alt="Foto Piloto 2"
-                                style="margin-right: 45%;">
-                            <div style="width: 160px; position: absolute; text-align: right;">
-                                <h1 class="h1-pilots">13º</h1>
-                                <h2 style="font-size: 10pt;">Esteban Ocon</h2>
-                                <h2 class="h2-pilots">27 pontos</h2>
-                                <h2 class="h2-pilots">0 vitórias</h2>
-                                <h2 class="h2-pilots">0 pódios</h2>
-                            </div>
-                        </div>
-                        <div class="position-pilot">
-                            <img src="assets/pilotos/Valtteri Bottas 77.avif" alt="Foto Piloto 2"
-                                style="margin-right: 45%;">
-                            <div style="width: 160px; position: absolute; text-align: right;">
-                                <h1 class="h1-pilots">15º</h1>
-                                <h2 style="font-size: 10pt;">Valtteri Bottas</h2>
-                                <h2 class="h2-pilots">10 pontos</h2>
-                                <h2 class="h2-pilots">0 vitórias</h2>
-                                <h2 class="h2-pilots">0 pódios</h2>
-                            </div>
-                        </div>
-                        <div class="position-pilot">
-                            <img src="assets/pilotos/Daniel Ricciardo 3.avif" alt="Foto Piloto 2"
-                                style="margin-right: 45%;">
-                            <div style="width: 160px; position: absolute; text-align: right;">
-                                <h1 class="h1-pilots">17º</h1>
-                                <h2 style="font-size: 10pt;">Daniel Ricciardo</h2>
-                                <h2 class="h2-pilots">6 pontos</h2>
-                                <h2 class="h2-pilots">0 vitórias</h2>
-                                <h2 class="h2-pilots">0 pódios</h2>
-                            </div>
-                        </div>
-                        <div class="position-pilot">
-                            <img src="assets/pilotos/Kevin Magnussen 20.avif" alt="Foto Piloto 2"
-                                style="margin-right: 45%;">
-                            <div style="width: 160px; position: absolute; text-align: right;">
-                                <h1 class="h1-pilots">19º</h1>
-                                <h2 style="font-size: 10pt;">Kevin Magnussen</h2>
-                                <h2 class="h2-pilots">3 pontos</h2>
-                                <h2 class="h2-pilots">0 vitórias</h2>
-                                <h2 class="h2-pilots">0 pódios</h2>
-                            </div>
-                        </div>
-                        <div class="position-pilot">
-                            <img src="assets/pilotos/Logan Sargeant 2.avif" alt="Foto Piloto 2"
-                                style="margin-right: 45%;">
-                            <div style="width: 160px; position: absolute; text-align: right;">
-                                <h1 class="h1-pilots">21º</h1>
-                                <h2 style="font-size: 10pt;">Logan Sargeant</h2>
-                                <h2 class="h2-pilots">1 pontos</h2>
-                                <h2 class="h2-pilots">0 vitórias</h2>
-                                <h2 class="h2-pilots">0 pódios</h2>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- right -->
-                    <div style="width: 50%;">
-                        <div class="position-pilot">
-                            <img src="assets/pilotos/Sergio Peres 11.avif" alt="Foto Piloto 2"
-                                style="margin-right: 45%;">
-                            <div style="width: 160px; position: absolute; text-align: right;">
-                                <h1 class="h1-pilots">2º</h1>
-                                <h2 style="font-size: 10pt;">Sergio Peres</h2>
-                                <h2 class="h2-pilots">258 pontos</h2>
-                                <h2 class="h2-pilots">2 vitórias</h2>
-                                <h2 class="h2-pilots">8 pódios</h2>
-                            </div>
-                        </div>
-                        <div class="position-pilot">
-                            <img src="assets/pilotos/Fernando Alonso 14.avif" alt="Foto Piloto 2"
-                                style="margin-right: 45%;">
-                            <div style="width: 160px; position: absolute; text-align: right;">
-                                <h1 class="h1-pilots">4º</h1>
-                                <h2 style="font-size: 10pt;">Fernando Alonso</h2>
-                                <h2 class="h2-pilots">198 pontos</h2>
-                                <h2 class="h2-pilots">0 vitórias</h2>
-                                <h2 class="h2-pilots">8 pódios</h2>
-                            </div>
-                        </div>
-                        <div class="position-pilot">
-                            <img src="assets/pilotos/Carlos Sainz 55.avif" alt="Foto Piloto 2"
-                                style="margin-right: 45%;">
-                            <div style="width: 160px; position: absolute; text-align: right;">
-                                <h1 class="h1-pilots">6º</h1>
-                                <h2 style="font-size: 10pt;">Carlos Sainz</h2>
-                                <h2 class="h2-pilots">192 pontos</h2>
-                                <h2 class="h2-pilots">1 vitórias</h2>
-                                <h2 class="h2-pilots">3 pódios</h2>
-                            </div>
-                        </div>
-                        <div class="position-pilot">
-                            <img src="assets/pilotos/George Russel 63.avif" alt="Foto Piloto 2"
-                                style="margin-right: 45%;">
-                            <div style="width: 160px; position: absolute; text-align: right;">
-                                <h1 class="h1-pilots">8º</h1>
-                                <h2 style="font-size: 10pt;">George Russel</h2>
-                                <h2 class="h2-pilots">156 pontos</h2>
-                                <h2 class="h2-pilots">0 vitórias</h2>
-                                <h2 class="h2-pilots">1 pódios</h2>
-                            </div>
-                        </div>
-                        <div class="position-pilot">
-                            <img src="assets/pilotos/Lance Stroll.avif" alt="Foto Piloto 2" style="margin-right: 45%;">
-                            <div style="width: 160px; position: absolute; text-align: right;">
-                                <h1 class="h1-pilots">10º</h1>
-                                <h2 style="font-size: 10pt;">Lance Stroll</h2>
-                                <h2 class="h2-pilots">63 pontos</h2>
-                                <h2 class="h2-pilots">0 vitórias</h2>
-                                <h2 class="h2-pilots">0 pódios</h2>
-                            </div>
-                        </div>
-                        <div class="position-pilot">
-                            <img src="assets/pilotos/Esteban Ocon 31.avif" alt="Foto Piloto 2"
-                                style="margin-right: 45%;">
-                            <div style="width: 160px; position: absolute; text-align: right;">
-                                <h1 class="h1-pilots">12º</h1>
-                                <h2 style="font-size: 10pt;">Esteban Ocon</h2>
-                                <h2 class="h2-pilots">46 pontos</h2>
-                                <h2 class="h2-pilots">0 vitórias</h2>
-                                <h2 class="h2-pilots">1 pódios</h2>
-                            </div>
-                        </div>
-                        <div class="position-pilot">
-                            <img src="assets/pilotos/Yuki Tsunoda 22.avif" alt="Foto Piloto 2"
-                                style="margin-right: 45%;">
-                            <div style="width: 160px; position: absolute; text-align: right;">
-                                <h1 class="h1-pilots">14º</h1>
-                                <h2 style="font-size: 10pt;">Yuki Tsunoda</h2>
-                                <h2 class="h2-pilots">13 pontos</h2>
-                                <h2 class="h2-pilots">0 vitórias</h2>
-                                <h2 class="h2-pilots">0 pódios</h2>
-                            </div>
-                        </div>
-                        <div class="position-pilot">
-                            <img src="assets/pilotos/Nico Hulkenberg 27.avif" alt="Foto Piloto 2"
-                                style="margin-right: 45%;">
-                            <div style="width: 160px; position: absolute; text-align: right;">
-                                <h1 class="h1-pilots">16º</h1>
-                                <h2 style="font-size: 10pt;">Nico Hulkenberg</h2>
-                                <h2 class="h2-pilots">9 pontos</h2>
-                                <h2 class="h2-pilots">0 vitórias</h2>
-                                <h2 class="h2-pilots">0 pódios</h2>
-                            </div>
-                        </div>
-                        <div class="position-pilot">
-                            <img src="assets/pilotos/Zhou Guanyu 24.avif" alt="Foto Piloto 2"
-                                style="margin-right: 45%;">
-                            <div style="width: 160px; position: absolute; text-align: right;">
-                                <h1 class="h1-pilots">18º</h1>
-                                <h2 style="font-size: 10pt;">Zhou Guanyu</h2>
-                                <h2 class="h2-pilots">6 pontos</h2>
-                                <h2 class="h2-pilots">0 vitórias</h2>
-                                <h2 class="h2-pilots">0 pódios</h2>
-                            </div>
-                        </div>
-                        <div class="position-pilot">
-                            <img src="assets/pilotos/Liam Lawson 40.avif" alt="Foto Piloto 2"
-                                style="margin-right: 45%;">
-                            <div style="width: 160px; position: absolute; text-align: right;">
-                                <h1 class="h1-pilots">20º</h1>
-                                <h2 style="font-size: 10pt;">Liam Lawson</h2>
-                                <h2 class="h2-pilots">2 pontos</h2>
-                                <h2 class="h2-pilots">0 vitórias</h2>
-                                <h2 class="h2-pilots">0 pódios</h2>
-                            </div>
-                        </div>
-                        <div class="position-pilot">
-                            <img src="assets/pilotos/Nyck de Vries.avif" alt="Foto Piloto 2" style="margin-right: 45%;">
-                            <div style="width: 160px; position: absolute; text-align: right;">
-                                <h1 class="h1-pilots">22º</h1>
-                                <h2 style="font-size: 10pt;">Nyck de Vries</h2>
-                                <h2 class="h2-pilots">0 pontos</h2>
-                                <h2 class="h2-pilots">0 vitórias</h2>
-                                <h2 class="h2-pilots">0 pódios</h2>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+        <div>
+            <div style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100px; background-color: rgb(12, 46, 109); text-align: center; padding: 0 0 0 73px; color: white; position: fixed; top: 0; z-index: 5;">
+                <h2 id="nome_user"></h2>
             </div>
-
-
-            <div class="table-last_gp" style="margin-right: 0;">
-                <h1 class="h1-title-block" style="margin-bottom: 0;">Último Gran Prix - Round 21</h1>
-                <h3 style="margin: 0 0 40px 0; font-family: f2, sans-serif; font-size: 10pt;">FORMULA 1 ROLEX GRANDE PRÊMIO DE SÃO PAULO 2023</h3>
-                <div style="width: 95%;">
-                    <div class="race-card">
-                        <div>
-                            <img src="assets/pilotos/Lando Norris 4.avif" style="height: 80%;">
-                            <div class="pilot-ranking" style="height: 70px;">
-                                <img src="assets/escuderias/mclaren.png" style="height: 30px; width: auto; margin:0;">
-                                <h1 class="h1-title-block" style="font-size: 10pt; margin: 0;">Lando Norris</h1>
+            <div class="main" id="escuderiass" style="justify-content: center; margin-top: 150px;">
+                <div class="table-classificacao">
+                    <h1 class="h1-title-block">Classificação temporada 2023</h1>
+                    <div style="width: 90%; display: flex;">
+                        <!-- left -->
+                        <div style="width: 50%; margin-right: 15px;">
+                            <div class="position-pilot" style="margin-top: 0;">
+                                <img src="assets/pilotos/Max Verstappen 1.avif" alt="Foto Piloto 2"
+                                    style="margin-right: 45%;">
+                                <div style="width: 160px; position: absolute; text-align: right;">
+                                    <h1 class="h1-pilots">1º</h1>
+                                    <h2 style="font-size: 10pt;">Max Verstappen</h2>
+                                    <h2 class="h2-pilots">524 pontos</h2>
+                                    <h2 class="h2-pilots">17 vitórias</h2>
+                                    <h2 class="h2-pilots">19 pódios</h2>
+                                </div>
                             </div>
-                        </div>
-                        <div>
-                            <img src="assets/pilotos/Max Verstappen 1.avif" style="height: 90%;">
-                            <div class="pilot-ranking" style="height: 100px;">
-                                <img src="assets/escuderias/redbull.png" style="height: 30px; width: auto;">
-                                <h1 class="h1-title-block" style="font-size: 10pt;">Max <br>Verstappen</h1>
+                            <div class="position-pilot">
+                                <img src="assets/pilotos/Lewis Hamilton 44.avif" alt="Foto Piloto 2"
+                                    style="margin-right: 45%;">
+                                <div style="width: 160px; position: absolute; text-align: right;">
+                                    <h1 class="h1-pilots">3º</h1>
+                                    <h2 style="font-size: 10pt;">Lewis Hamilton</h2>
+                                    <h2 class="h2-pilots">226 pontos</h2>
+                                    <h2 class="h2-pilots">0 vitórias</h2>
+                                    <h2 class="h2-pilots">6 pódios</h2>
+                                </div>
                             </div>
-                        </div>
-                        <div style="width: 40%;">
-                            <img src="assets/pilotos/Fernando Alonso 14.avif" style="height: 80%;">
-                            <div class="pilot-ranking" style="height: 50px;">
-                                <img src="assets/escuderias/astonmartin.png" style="height: 25px; width: auto;">
-                                <h1 class="h1-title-block" style="font-size: 10pt;">Fernando <br>Alonso</h1></div>
-                        </div>
-                    </div>
-                </div>
-                <div class="card" style="height: 400px; width: 600px; height: 700px; background-color: unset; box-shadow: unset;">
-                    <img src="./assets/circuitos/Autódromo_José_Carlos_Pace_21º-removebg-preview.png" style="height: 400px; width: auto;">
-                    <div>
-                        <div class="line-card">
-                            <div class="data-card">
-                                <span>Primeiro Grande Prêmio</span>
-                                <h2>1973</h2>
+                            <div class="position-pilot">
+                                <img src="assets/pilotos/Lando Norris 4.avif" alt="Foto Piloto 2"
+                                    style="margin-right: 45%;">
+                                <div style="width: 160px; position: absolute; text-align: right;">
+                                    <h1 class="h1-pilots">5º</h1>
+                                    <h2 style="font-size: 10pt;">Lando Norris</h2>
+                                    <h2 class="h2-pilots">195 pontos</h2>
+                                    <h2 class="h2-pilots">0 vitórias</h2>
+                                    <h2 class="h2-pilots">7 pódios</h2>
+                                </div>
                             </div>
-                            <div class="data-card">
-                                <span>Número de Voltas</span>
-                                <h2>71</h2>
+                            <div class="position-pilot">
+                                <img src="assets/pilotos/Charles Leclerc 16.avif" alt="Foto Piloto 2"
+                                    style="margin-right: 45%;">
+                                <div style="width: 160px; position: absolute; text-align: right;">
+                                    <h1 class="h1-pilots">7º</h1>
+                                    <h2 style="font-size: 10pt;">Charles Leclerc</h2>
+                                    <h2 class="h2-pilots">170 pontos</h2>
+                                    <h2 class="h2-pilots">0 vitórias</h2>
+                                    <h2 class="h2-pilots">4 pódios</h2>
+                                </div>
                             </div>
-                        </div>
-                        <div class="line-card">
-                            <div class="data-card">
-                                <span>Comprimento do circuito</span>
-                                <h2>4.309 KM</h2>
+                            <div class="position-pilot">
+                                <img src="assets/pilotos/Oscar Piastri 81.avif" alt="Foto Piloto 2"
+                                    style="margin-right: 45%;">
+                                <div style="width: 160px; position: absolute; text-align: right;">
+                                    <h1 class="h1-pilots">9º</h1>
+                                    <h2 style="font-size: 10pt;">Oscar Piastri</h2>
+                                    <h2 class="h2-pilots">87 pontos</h2>
+                                    <h2 class="h2-pilots">0 vitórias</h2>
+                                    <h2 class="h2-pilots">2 pódios</h2>
+                                </div>
                             </div>
-                            <div class="data-card">
-                                <span>Distância da corrida</span>
-                                <h2>305 KM</h2>
+                            <div class="position-pilot">
+                                <img src="assets/pilotos/Pierre Gasly 10.avif" alt="Foto Piloto 2"
+                                    style="margin-right: 45%;">
+                                <div style="width: 160px; position: absolute; text-align: right;">
+                                    <h1 class="h1-pilots">11º</h1>
+                                    <h2 style="font-size: 10pt;">Pierre Gasly</h2>
+                                    <h2 class="h2-pilots">62 pontos</h2>
+                                    <h2 class="h2-pilots">0 vitórias</h2>
+                                    <h2 class="h2-pilots">1 pódios</h2>
+                                </div>
                             </div>
-                        </div>
-                        <div class="line-card line-card-end">
-                            <div class="data-card data-card-end">
-                                <span>Registro volta mais rápida</span>
-                                <div style="display: flex; align-items: flex-end;">
-                                    <h2>1:10.540</h2> 
-                                    <span>Valtteri Bottas (2018)</span>
+                            <div class="position-pilot">
+                                <img src="assets/pilotos/Esteban Ocon 31.avif" alt="Foto Piloto 2"
+                                    style="margin-right: 45%;">
+                                <div style="width: 160px; position: absolute; text-align: right;">
+                                    <h1 class="h1-pilots">13º</h1>
+                                    <h2 style="font-size: 10pt;">Esteban Ocon</h2>
+                                    <h2 class="h2-pilots">27 pontos</h2>
+                                    <h2 class="h2-pilots">0 vitórias</h2>
+                                    <h2 class="h2-pilots">0 pódios</h2>
+                                </div>
+                            </div>
+                            <div class="position-pilot">
+                                <img src="assets/pilotos/Valtteri Bottas 77.avif" alt="Foto Piloto 2"
+                                    style="margin-right: 45%;">
+                                <div style="width: 160px; position: absolute; text-align: right;">
+                                    <h1 class="h1-pilots">15º</h1>
+                                    <h2 style="font-size: 10pt;">Valtteri Bottas</h2>
+                                    <h2 class="h2-pilots">10 pontos</h2>
+                                    <h2 class="h2-pilots">0 vitórias</h2>
+                                    <h2 class="h2-pilots">0 pódios</h2>
+                                </div>
+                            </div>
+                            <div class="position-pilot">
+                                <img src="assets/pilotos/Daniel Ricciardo 3.avif" alt="Foto Piloto 2"
+                                    style="margin-right: 45%;">
+                                <div style="width: 160px; position: absolute; text-align: right;">
+                                    <h1 class="h1-pilots">17º</h1>
+                                    <h2 style="font-size: 10pt;">Daniel Ricciardo</h2>
+                                    <h2 class="h2-pilots">6 pontos</h2>
+                                    <h2 class="h2-pilots">0 vitórias</h2>
+                                    <h2 class="h2-pilots">0 pódios</h2>
+                                </div>
+                            </div>
+                            <div class="position-pilot">
+                                <img src="assets/pilotos/Kevin Magnussen 20.avif" alt="Foto Piloto 2"
+                                    style="margin-right: 45%;">
+                                <div style="width: 160px; position: absolute; text-align: right;">
+                                    <h1 class="h1-pilots">19º</h1>
+                                    <h2 style="font-size: 10pt;">Kevin Magnussen</h2>
+                                    <h2 class="h2-pilots">3 pontos</h2>
+                                    <h2 class="h2-pilots">0 vitórias</h2>
+                                    <h2 class="h2-pilots">0 pódios</h2>
+                                </div>
+                            </div>
+                            <div class="position-pilot">
+                                <img src="assets/pilotos/Logan Sargeant 2.avif" alt="Foto Piloto 2"
+                                    style="margin-right: 45%;">
+                                <div style="width: 160px; position: absolute; text-align: right;">
+                                    <h1 class="h1-pilots">21º</h1>
+                                    <h2 style="font-size: 10pt;">Logan Sargeant</h2>
+                                    <h2 class="h2-pilots">1 pontos</h2>
+                                    <h2 class="h2-pilots">0 vitórias</h2>
+                                    <h2 class="h2-pilots">0 pódios</h2>
                                 </div>
                             </div>
                         </div>
-                    </div
-            </div>
-            <!-- bloco overley dependendo da fk null -->
-            <div class="overlay-container" style="display: none;">
-                <div class="popup-carrer"></div>
+                        <!-- right -->
+                        <div style="width: 50%;">
+                            <div class="position-pilot">
+                                <img src="assets/pilotos/Sergio Peres 11.avif" alt="Foto Piloto 2"
+                                    style="margin-right: 45%;">
+                                <div style="width: 160px; position: absolute; text-align: right;">
+                                    <h1 class="h1-pilots">2º</h1>
+                                    <h2 style="font-size: 10pt;">Sergio Peres</h2>
+                                    <h2 class="h2-pilots">258 pontos</h2>
+                                    <h2 class="h2-pilots">2 vitórias</h2>
+                                    <h2 class="h2-pilots">8 pódios</h2>
+                                </div>
+                            </div>
+                            <div class="position-pilot">
+                                <img src="assets/pilotos/Fernando Alonso 14.avif" alt="Foto Piloto 2"
+                                    style="margin-right: 45%;">
+                                <div style="width: 160px; position: absolute; text-align: right;">
+                                    <h1 class="h1-pilots">4º</h1>
+                                    <h2 style="font-size: 10pt;">Fernando Alonso</h2>
+                                    <h2 class="h2-pilots">198 pontos</h2>
+                                    <h2 class="h2-pilots">0 vitórias</h2>
+                                    <h2 class="h2-pilots">8 pódios</h2>
+                                </div>
+                            </div>
+                            <div class="position-pilot">
+                                <img src="assets/pilotos/Carlos Sainz 55.avif" alt="Foto Piloto 2"
+                                    style="margin-right: 45%;">
+                                <div style="width: 160px; position: absolute; text-align: right;">
+                                    <h1 class="h1-pilots">6º</h1>
+                                    <h2 style="font-size: 10pt;">Carlos Sainz</h2>
+                                    <h2 class="h2-pilots">192 pontos</h2>
+                                    <h2 class="h2-pilots">1 vitórias</h2>
+                                    <h2 class="h2-pilots">3 pódios</h2>
+                                </div>
+                            </div>
+                            <div class="position-pilot">
+                                <img src="assets/pilotos/George Russel 63.avif" alt="Foto Piloto 2"
+                                    style="margin-right: 45%;">
+                                <div style="width: 160px; position: absolute; text-align: right;">
+                                    <h1 class="h1-pilots">8º</h1>
+                                    <h2 style="font-size: 10pt;">George Russel</h2>
+                                    <h2 class="h2-pilots">156 pontos</h2>
+                                    <h2 class="h2-pilots">0 vitórias</h2>
+                                    <h2 class="h2-pilots">1 pódios</h2>
+                                </div>
+                            </div>
+                            <div class="position-pilot">
+                                <img src="assets/pilotos/Lance Stroll.avif" alt="Foto Piloto 2"
+                                    style="margin-right: 45%;">
+                                <div style="width: 160px; position: absolute; text-align: right;">
+                                    <h1 class="h1-pilots">10º</h1>
+                                    <h2 style="font-size: 10pt;">Lance Stroll</h2>
+                                    <h2 class="h2-pilots">63 pontos</h2>
+                                    <h2 class="h2-pilots">0 vitórias</h2>
+                                    <h2 class="h2-pilots">0 pódios</h2>
+                                </div>
+                            </div>
+                            <div class="position-pilot">
+                                <img src="assets/pilotos/Esteban Ocon 31.avif" alt="Foto Piloto 2"
+                                    style="margin-right: 45%;">
+                                <div style="width: 160px; position: absolute; text-align: right;">
+                                    <h1 class="h1-pilots">12º</h1>
+                                    <h2 style="font-size: 10pt;">Esteban Ocon</h2>
+                                    <h2 class="h2-pilots">46 pontos</h2>
+                                    <h2 class="h2-pilots">0 vitórias</h2>
+                                    <h2 class="h2-pilots">1 pódios</h2>
+                                </div>
+                            </div>
+                            <div class="position-pilot">
+                                <img src="assets/pilotos/Yuki Tsunoda 22.avif" alt="Foto Piloto 2"
+                                    style="margin-right: 45%;">
+                                <div style="width: 160px; position: absolute; text-align: right;">
+                                    <h1 class="h1-pilots">14º</h1>
+                                    <h2 style="font-size: 10pt;">Yuki Tsunoda</h2>
+                                    <h2 class="h2-pilots">13 pontos</h2>
+                                    <h2 class="h2-pilots">0 vitórias</h2>
+                                    <h2 class="h2-pilots">0 pódios</h2>
+                                </div>
+                            </div>
+                            <div class="position-pilot">
+                                <img src="assets/pilotos/Nico Hulkenberg 27.avif" alt="Foto Piloto 2"
+                                    style="margin-right: 45%;">
+                                <div style="width: 160px; position: absolute; text-align: right;">
+                                    <h1 class="h1-pilots">16º</h1>
+                                    <h2 style="font-size: 10pt;">Nico Hulkenberg</h2>
+                                    <h2 class="h2-pilots">9 pontos</h2>
+                                    <h2 class="h2-pilots">0 vitórias</h2>
+                                    <h2 class="h2-pilots">0 pódios</h2>
+                                </div>
+                            </div>
+                            <div class="position-pilot">
+                                <img src="assets/pilotos/Zhou Guanyu 24.avif" alt="Foto Piloto 2"
+                                    style="margin-right: 45%;">
+                                <div style="width: 160px; position: absolute; text-align: right;">
+                                    <h1 class="h1-pilots">18º</h1>
+                                    <h2 style="font-size: 10pt;">Zhou Guanyu</h2>
+                                    <h2 class="h2-pilots">6 pontos</h2>
+                                    <h2 class="h2-pilots">0 vitórias</h2>
+                                    <h2 class="h2-pilots">0 pódios</h2>
+                                </div>
+                            </div>
+                            <div class="position-pilot">
+                                <img src="assets/pilotos/Liam Lawson 40.avif" alt="Foto Piloto 2"
+                                    style="margin-right: 45%;">
+                                <div style="width: 160px; position: absolute; text-align: right;">
+                                    <h1 class="h1-pilots">20º</h1>
+                                    <h2 style="font-size: 10pt;">Liam Lawson</h2>
+                                    <h2 class="h2-pilots">2 pontos</h2>
+                                    <h2 class="h2-pilots">0 vitórias</h2>
+                                    <h2 class="h2-pilots">0 pódios</h2>
+                                </div>
+                            </div>
+                            <div class="position-pilot">
+                                <img src="assets/pilotos/Nyck de Vries.avif" alt="Foto Piloto 2"
+                                    style="margin-right: 45%;">
+                                <div style="width: 160px; position: absolute; text-align: right;">
+                                    <h1 class="h1-pilots">22º</h1>
+                                    <h2 style="font-size: 10pt;">Nyck de Vries</h2>
+                                    <h2 class="h2-pilots">0 pontos</h2>
+                                    <h2 class="h2-pilots">0 vitórias</h2>
+                                    <h2 class="h2-pilots">0 pódios</h2>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="table-last_gp" style="margin-right: 0;">
+                    <h1 class="h1-title-block" style="margin-bottom: 0;">Último Gran Prix - Round 21</h1>
+                    <h3 style="margin: 0 0 40px 0; font-family: f2, sans-serif; font-size: 10pt;">FORMULA 1 ROLEX GRANDE
+                        PRÊMIO DE SÃO PAULO 2023</h3>
+                    <div style="width: 95%;">
+                        <div class="race-card">
+                            <div>
+                                <img src="assets/pilotos/Lando Norris 4.avif" style="height: 80%;">
+                                <div class="pilot-ranking" style="height: 70px;">
+                                    <img src="assets/escuderias/mclaren.png"
+                                        style="height: 30px; width: auto; margin:0;">
+                                    <h1 class="h1-title-block" style="font-size: 10pt; margin: 0;">Lando Norris</h1>
+                                </div>
+                            </div>
+                            <div>
+                                <img src="assets/pilotos/Max Verstappen 1.avif" style="height: 90%;">
+                                <div class="pilot-ranking" style="height: 100px;">
+                                    <img src="assets/escuderias/redbull.png" style="height: 30px; width: auto;">
+                                    <h1 class="h1-title-block" style="font-size: 10pt;">Max <br>Verstappen</h1>
+                                </div>
+                            </div>
+                            <div style="width: 40%;">
+                                <img src="assets/pilotos/Fernando Alonso 14.avif" style="height: 80%;">
+                                <div class="pilot-ranking" style="height: 50px;">
+                                    <img src="assets/escuderias/astonmartin.png" style="height: 25px; width: auto;">
+                                    <h1 class="h1-title-block" style="font-size: 10pt;">Fernando <br>Alonso</h1>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card"
+                        style="height: 400px; width: 600px; height: 700px; background-color: unset; box-shadow: unset;">
+                        <img src="./assets/circuitos/Autódromo_José_Carlos_Pace_21º-removebg-preview.png"
+                            style="height: 400px; width: auto;">
+                        <div>
+                            <div class="line-card">
+                                <div class="data-card">
+                                    <span>Primeiro Grande Prêmio</span>
+                                    <h2>1973</h2>
+                                </div>
+                                <div class="data-card">
+                                    <span>Número de Voltas</span>
+                                    <h2>71</h2>
+                                </div>
+                            </div>
+                            <div class="line-card">
+                                <div class="data-card">
+                                    <span>Comprimento do circuito</span>
+                                    <h2>4.309 KM</h2>
+                                </div>
+                                <div class="data-card">
+                                    <span>Distância da corrida</span>
+                                    <h2>305 KM</h2>
+                                </div>
+                            </div>
+                            <div class="line-card line-card-end">
+                                <div class="data-card data-card-end">
+                                    <span>Registro volta mais rápida</span>
+                                    <div style="display: flex; align-items: flex-end;">
+                                        <h2>1:10.540</h2>
+                                        <span>Valtteri Bottas (2018)</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div </div>
+                        <!-- bloco overley dependendo da fk null -->
+                        <div class="overlay-container" style="display: none;" id="create_carrer">
+                            <div class="popup-carrer">
+                                <h1 class="h1-title-block">Crie seu perfil uhuuu</h1>
+                                <button onclick="fechar()">fechar</button>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 </body>
 
 </html>
+
+<script>
+    setTimeout(() => {
+        loading_page.style.display = "none"
+    }, 4000)
+    var fk = sessionStorage.FK_PERFIL;
+    setTimeout(() => {
+        if(fk == "null") {
+        create_carrer.style.display = "flex"
+    }
+    }, 15000)
+    function fechar() {
+        create_carrer.style.display = "none"
+    }
+    nome_user.innerHTML = `Olá, bem vindo de volta, ${sessionStorage.NOME_USUARIO}`
+</script>

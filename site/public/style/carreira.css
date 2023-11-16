@@ -33,7 +33,7 @@ img {
     flex-direction: column;
     align-items: center;
     width: 150px;
-    background-color: rgba(212, 33, 20, 0.966);
+    background-color: rgba(212, 33, 20, 1);
     height: 150vh;
     position: fixed;
 }
@@ -239,6 +239,11 @@ tr:nth-child(even) {
     background-color: rgba(74, 74, 74, 0.7);
 }
 .popup-carrer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: white;
     width: 50%; 
     height: 60%; 
     border-radius: 40px; 
