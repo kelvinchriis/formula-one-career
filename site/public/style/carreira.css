@@ -43,7 +43,6 @@ img {
     flex-wrap: wrap;
     justify-content: center;
     width: 100%;
-    padding: 0 0 50px 73px;
 }
 
 .box-car {
@@ -54,8 +53,8 @@ img {
     padding: 20px 20px;
     border-radius: 30px;
     margin: 20px;
-    height: 140px;
-    width: 300px;
+    height: 170px;
+    width: 380px;
     background-color: #F7F4F1;
     /* background: linear-gradient(rgba(97, 48, 48, 0.08), rgba(97, 48, 48, 0.08), rgba(77, 71, 67, 0.548)); */
     cursor: pointer;
@@ -75,9 +74,9 @@ img {
     justify-content: center;
     padding: 20px 20px;
     border-radius: 30px;
-    margin: 20px;
-    height: 140px;
-    width: 300px;
+    margin: 15px;
+    height: 280px;
+    width: 230px;
     background-color: #F7F4F1;
     /* background: linear-gradient(rgba(97, 48, 48, 0.08), rgba(97, 48, 48, 0.08), rgba(77, 71, 67, 0.548)); */
     cursor: pointer;
@@ -108,7 +107,8 @@ button {
     padding: 9px 20px;
     border-radius: 20px;
     border-color: transparent;
-    box-shadow: 1px 1px 10px black
+    box-shadow: 1px 1px 10px black;
+    cursor: pointer;
 }
 
 .card {
@@ -122,6 +122,27 @@ button {
     border-radius: 20px;
     margin: 20px;
     box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+.card-pilot {
+    display: flex;
+    width: 280px;
+    height: 340px;
+    background-color: #F7F4F1;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 10px 0 10px;
+    border-radius: 20px;
+    margin: 20px;
+    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.card-pilot:hover {
+    background-color: rgba(105, 53, 50, 0.568);
 }
 
 h2 {
@@ -132,6 +153,12 @@ h2 {
 }
 
 .line-card {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 5% 15px 5%;
+}
+
+.line-card-index {
     display: flex;
     justify-content: space-between;
     margin: 10px 5% 15px 5%;
@@ -188,27 +215,32 @@ tr:nth-child(even) {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 650px; 
+/*    width: 570px; */
+    width: 45%;
+    min-width: 550px;
     background-color: rgba(120, 113, 122, 0.147); 
     border-radius: 20px; 
-    margin-right: 2%;
-    padding-bottom: 20px;
+    padding-bottom: 40px;
+    margin: 40px 40px 40px 0;
 }
 .table-last_gp {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 650px; 
-    height: 1500px;
+    width: 45%;
+    min-width: 550px;
+/*    width: 570px; */
+    height: 830px;
     background-color: rgba(120, 113, 122, 0.147); 
     border-radius: 20px; 
-    /* margin-right: 1%; */
     padding-bottom: 20px;
+    margin: 40px 0 40px 0;
 }
 .position-pilot{
     display: flex;
     justify-content: right;
-    width: 90%; 
+    width: 80%; 
+    height: 140px;
     background-color: rgba(0, 0, 0, 0.118); 
     border-radius: 20px; 
     margin-top: 30px;
@@ -250,7 +282,7 @@ tr:nth-child(even) {
     background-color: rgba(0,0,0,0.7);
 }
 .h1-title-block {
-    font-size: 25pt; 
+    font-size: 20pt; 
     font-family: f1, sans-serif;
 }
 .race-card {
@@ -266,3 +298,149 @@ tr:nth-child(even) {
     align-items: center; 
     justify-content: center;
 }
+
+.img-classificacao {
+    margin-right: 40%; 
+    width: auto; 
+    height: 100%;
+}
+
+.header-left {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    height: 100vh;
+    width: 4%;
+    display: flex;
+    align-items: center;
+    padding-top: 20px;
+    flex-direction: column;
+    background-color: rgba(220, 10, 20, 1);
+}
+
+.dash {
+    display: flex;
+    width: 96%;
+    position: relative;
+    flex-wrap: wrap;
+    top: 0;
+    left: 4%;
+    justify-content: center;
+}
+.tela_cadastro {
+    display: flex;
+    width: 96%;
+    position: relative;
+    flex-wrap: wrap;
+    top: 0;
+    left: 4%;
+    justify-content: center;
+}
+.button-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    margin-bottom: 10px;
+}
+
+.img-pilot {
+    height: 90%; 
+    width: auto;
+}
+
+        h1 {
+            font-size: 18pt;
+        }
+        a {
+            all: unset;
+        }
+        input {
+            width: 250px;
+            padding: 8px 20px;
+            border-radius: 12px;
+            border-color: transparent;
+            font-size: 11pt;
+            font-family: f1, sans-serif;
+            margin: 8px;
+        }
+        textarea {
+            width: 250px;
+            padding: 5px 20px;
+            border-radius: 15px;
+            border-color: transparent;
+            font-size: 11pt;
+            font-family: f2, sans-serif;
+            margin: 8px;
+        }
+        .img-user {
+            width: 250px; 
+            height: 250px; 
+            margin-top: 40px; 
+            border-radius: 50%; 
+            background-color: white;
+            background-image: url("../assets/index/user.jpg");
+            background-size: cover;
+        }
+        .side-profile {
+            width: 50%; 
+            height: 100%; 
+            background-color: rgba(255, 0, 0, 0.5); 
+            border-radius: 0 20px 20px 0;
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: right;
+        }
+        .botao-profile {
+            width: 180px; 
+            user-select: none; 
+            cursor: pointer; 
+            height: 50px; 
+            border-radius: 20px; 
+            background-color: black; color: white; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center;
+        }
+        .side-input {
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            flex-direction: column; 
+            width: 50%
+        }
+        .profile {
+            display: flex; 
+            align-items: center; 
+            justify-content: center; 
+            width: 100%; 
+            height: 450px;
+            border-radius: 20px; 
+            background-color: rgba(100, 0, 0, 0.2);
+        }
+        .content-profile {
+            width: 85%; 
+            height: 67vh; 
+            display: flex; 
+            flex-direction: column; 
+            align-items: center; 
+            justify-content: center;
+        }
+        .file-input span{
+            background-color: rgba(255, 0, 10, 0.8);
+            color: white;
+            padding: 10px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 15pt;
+        }
+        .file-input span:hover {
+            background-color: #2980b9;
+        }
+        .file-input input[type="file"]{
+            display: none;
+        }

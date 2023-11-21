@@ -68,10 +68,10 @@ var width = window.innerWidth;
         var sizelineup = sizeGrid.offsetWidth;
         
         var margem3 = (position_now/3)-(sizelineup*0.5044)
-        // mostrar.innerHTML = `init: ${(init_div+500+500)*0.8} positionY: ${position_now} line: ${sizelineup}`
+        //mostrar.innerHTML = `${(init_div+500+500)} <= ${sizelineup*0.2522}`
         // mostrar.innerHTML = `${margem3} <= ${sizelineup*0.2522}`
 
-        if (position_now >= (init_div+500+500)*0.8 && margem3 <= sizelineup*0.2522) {
+        if (position_now >= (init_div+500+500)*0.9 && margem3 <= sizelineup*0.2522) {
             car_grid_1.style.marginLeft = `${margem3}px`
             car_grid_2.style.marginRight = `${margem3}px`
         } else {

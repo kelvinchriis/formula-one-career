@@ -1,0 +1,3 @@
+escuderia - id_escuderia
+carro id_carro
+pista id_pista

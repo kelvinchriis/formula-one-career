@@ -1,32 +1,37 @@
 var boxCars = document.querySelectorAll('.box-car');
-var previousClickedBoxCar = null; // Para rastrear o box-car clicado anteriormente
+var card = document.querySelectorAll('.card');
+var pilot = document.querySelectorAll('.card-pilot');
 
-function handleClick() {
+var carro = null
+var pista = null
+var piloto = null
+
+function selectCar() {
     var id = this.getAttribute('data-id');
+    carro = id
+    pistas()
+}
 
-    // Remove o botão do box-car clicado anteriormente
-    if (previousClickedBoxCar) {
-        var existingButton = previousClickedBoxCar.querySelector('.avançar-button');
-        if (existingButton) {
-            existingButton.remove();
-        }
-    }
+function selectPista() {
+    var id = this.getAttribute('data-id');
+    pista = id
+    pilotos()
+}
 
-    // Crie e adicione o botão "Avançar" ao box-car selecionado
-    var button = document.createElement('button');
-    button.textContent = 'Avançar';
-    button.className = 'avançar-button'; // Adicione uma classe para identificar o botão
-    this.appendChild(button);
-
-    var avancarButton = document.querySelector('.avançar-button');
-    avancarButton.addEventListener('click', () => {
-        window.location.href = "circuito.html"
-    })
-
-    // Atualize o box-car clicado anteriormente
-    previousClickedBoxCar = this;
+function selectPiloto() {
+    var id = this.getAttribute('data-id');
+    piloto = id
+    finalizar()
 }
 
 for (var i = 0; i < boxCars.length; i++) {
-    boxCars[i].addEventListener('click', handleClick);
+    boxCars[i].addEventListener('click', selectCar);
+}
+
+for (var i = 0; i < card.length; i++) {
+    card[i].addEventListener('click', selectPista);
+}
+
+for (var i = 0; i < pilot.length; i++) {
+    pilot[i].addEventListener('click', selectPiloto);
 }

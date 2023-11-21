@@ -1,41 +1,58 @@
+var escuderia = null
 
-function mercedes() {
-    ferrarii.style.display = "none"
-    mercedess.style.display = "flex"
-    escuderiass.style.display = "none"
-    redbulll.style.display = "none"
-    botao_escuderias.style.display = "block"
-}
-function ferrari() {
-    mercedess.style.display = "none"
-    ferrarii.style.display = "flex"
-    redbulll.style.display = "none"
-    escuderiass.style.display = "none"
-    botao_escuderias.style.display = "block"
-}
-function redbull() {
-    mercedess.style.display = "none"
-    ferrarii.style.display = "none"
-    escuderiass.style.display = "none"
-    redbulll.style.display = "flex"
-    botao_escuderias.style.display = "block"
-}
-function williams() {
-    mercedess.style.display = "none"
-    ferrarii.style.display = "none"
-    escuderiass.style.display = "none"
-    redbulll.style.display = "none"
-    williamss.style.display = "flex"
-    botao_escuderias.style.display = "block"
+
+function perfil() {
+    clearAll()
+    perfill.style.display = "flex"
 }
 function escuderias() {
+    clearAll()
+    escuderiass.style.display = "flex"
+}
+function ferrari() {
+    clearAll()
+    ferrarii.style.display = "flex"
+    escuderia = 1
+}
+function mercedes() {
+    clearAll()
+    mercedess.style.display = "flex"
+    escuderia = 2
+}
+function redbull() {
+    clearAll()
+    redbulll.style.display = "flex"
+    escuderia = 3
+}
+function williams() {
+    clearAll()
+    williamss.style.display = "flex"
+    escuderia = 4
+}
+function pistas() {
+    clearAll()
+    pistass.style.display = "flex"
+}
+function pilotos() {
+    clearAll()
+    pilotoss.style.display = "flex"
+}
+function finalizar() {
+    clearAll()
+    finalizarr.style.display = "flex"
+}
+function clearAll(){
     mercedess.style.display = "none"
     ferrarii.style.display = "none"
-    escuderiass.style.display = "flex"
+    escuderiass.style.display = "none"
     redbulll.style.display = "none"
     williamss.style.display = "none"
-    botao_escuderias.style.display = "none"
+    pistass.style.display = "none"
+    pilotoss.style.display = "none"
+    perfill.style.display = "none"
+    finalizarr.style.display = "none"
 }
-
-
-
+function sair() {
+    sessionStorage.clear();
+    window.location = "login.html";
+}
