@@ -16,5 +16,9 @@ router.get("/buscar/:username", function (req, res) {
   perfilController.buscarPorUsername(req, res);
 });
 
+router.get("/perfil/:username", function (req, res) {
+  perfilController.(buscarPerfil)(req, res);
+});
+
 
 module.exports = router;

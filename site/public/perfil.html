@@ -24,7 +24,9 @@
                 <i class="fa-solid fa-house fa-2xl" style="color: #000000;margin-bottom: 55px; cursor: pointer;"></i>
             </a>
             <!-- busca perfil -->
-            <i class="fa-solid fa-star fa-2xl" style="color: #000000;margin-bottom: 55px; cursor: pointer;"></i>
+            <a href="profiles.html">
+                <i class="fa-solid fa-star fa-2xl" style="color: #000000;margin-bottom: 55px; cursor: pointer;"></i>
+            </a>
             <!-- perfil pessoal -->
             <a href="perfil.html">
                 <i class="fa-solid fa-user fa-2xl" style="color: #ffffff;margin-bottom: 58px; cursor: pointer;"></i>
@@ -34,7 +36,7 @@
 		</div>
 		<div class="dash">
 			<!-- create perfil init -->
-            <div class="main" id="initt" style="padding: 0 15%; display: none;">
+            <div class="main" id="initt" style=" display: none;">
                 <div style="width: 1100px; height: 70vh; display: flex; flex-direction: column; align-items: center; justify-content: center;">
                     <h2 style="font-size: 35pt;">Crie seu perfil de piloto da Fórmula 1</h2>
                     <h1 style="width: 71%; text-align: center;">Conecte-se com aficionados da Fórmula 1! Troque experiências, encontre fãs da sua scuderia favorita ou do seu piloto preferido. Já viveu a emoção de assistir ao vivo? Compartilhe sua história e faça parte dessa comunidade apaixonada!</h1>
@@ -45,11 +47,11 @@
                     </a>
                 </div>
                 <div style="width: 100%; height: 30vh; display: flex; justify-content: space-between; align-items: flex-end;">
-                    <img src="./assets/index/carro3.png" style="width: 500px;">
-                    <img src="./assets/index/carro2.png" style="width: 500px;">
+                    <img src="./assets/index/carro3.png" style="width: 450px;">
+                    <img src="./assets/index/carro2.png" style="width: 450px;">
                 </div>
             </div>
-            <div class="main" id="profilee" style="padding: 0 9%;">
+            <div class="main" id="profilee" style="padding: 0 9%; display: none;">
             	<div style="display: flex; width: 100%; align-items: center;">
             		<div style="display: flex; width: 800px; flex-wrap: wrap; border-radius: 20px; background-color: rgba(0, 0, 0, 0.2); margin-top: 20px;">
 
@@ -130,12 +132,11 @@
 </html>
 
 <script type="text/javascript">
-	// var fk = sessionStorage.FK_PERFIL;
-    // if (fk == "null") {
-    //    initt.style.display = "flex"
-    // } else if (fk == undefined){
-    //     initt.style.display = "flex"
-    // } else{
-    //     frame.innerHTML = ""
-    // }
+	var fk = sessionStorage.FK_PERFIL;
+    if (fk == "null" || fk == undefined) {
+       initt.style.display = "flex"
+    } else{
+		initt.style.display = "none"
+        profilee.style.display = "flex"
+    }
 </script>

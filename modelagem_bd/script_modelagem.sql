@@ -38,6 +38,7 @@ create table pista (
 
 create table perfil (
 	idPerfil int primary key auto_increment,
+    username varchar(45),
     dataNasc date,
     nacionalidade varchar(45),
     numeroCarro int,

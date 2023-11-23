@@ -141,8 +141,42 @@ button {
     transition: 0.5s;
 }
 
+.card-user {
+    display: flex;
+    justify-content: center; 
+    height: 300px;
+    width: 280px;
+    background-color: #F7F4F1;
+    flex-direction: column;
+    align-items: center;
+    padding: 10px 10px 0 10px;
+    border-radius: 20px;
+    margin: 20px;
+    box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: 0.5s;
+}
+
 .card-pilot:hover {
     background-color: rgba(105, 53, 50, 0.568);
+}
+
+.card-user:hover {
+    background-color: rgba(105, 53, 50, 0.568);
+}
+
+#name_user {
+    margin: 0;
+}
+
+#img_user {
+    margin-top: 5px;
+}
+
+.tela-user {
+    display: flex; 
+    justify-content: center; 
+    flex-wrap: wrap;
 }
 
 h2 {
@@ -239,7 +273,7 @@ tr:nth-child(even) {
 .position-pilot{
     display: flex;
     justify-content: right;
-    width: 80%; 
+    width: 85%; 
     height: 140px;
     background-color: rgba(0, 0, 0, 0.118); 
     border-radius: 20px; 
@@ -423,8 +457,8 @@ tr:nth-child(even) {
             background-color: rgba(100, 0, 0, 0.2);
         }
         .content-profile {
-            width: 85%; 
-            height: 67vh; 
+            width: 60%; 
+            height: 70vh; 
             display: flex; 
             flex-direction: column; 
             align-items: center; 

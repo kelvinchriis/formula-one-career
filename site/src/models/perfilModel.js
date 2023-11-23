@@ -1,7 +1,13 @@
 var database = require("../database/config");
 
 function buscarPorUsername(username) {
-  var query = `select idPerfil from perfil where username = '${username}'`;
+  var query = `select idPerfil, nome, foto from perfil where username = '${username}'`;
+
+  return database.executar(query);
+}
+
+function buscarPerfil(username) {
+  var query = `select nome from perfil where username like '${username}%'`;
 
   return database.executar(query);
 }
@@ -16,9 +22,8 @@ function implementarFkPerfil(fkPerfil, idUser) {
     return database.executar(instrucao);
 }
 
-
 function cadastrar(username, nacionalidade, nasc, numero, biografia, equipe, carro, pista, piloto) {
-  var query = `insert into perfil values (null, '${username}', '${nacionalidade}', '${nasc}', ${numero},' ${biografia}', ${equipe}, ${carro}, ${pista}, '${piloto}')`;
+  var query = `insert into perfil values (null, '${username}', '${nasc}', '${nacionalidade}', ${numero},' ${biografia}', ${equipe}, ${carro}, ${pista}, ${piloto})`;
 
   return database.executar(query);
 }
@@ -26,5 +31,6 @@ function cadastrar(username, nacionalidade, nasc, numero, biografia, equipe, car
 module.exports = { 
   implementarFkPerfil, 
   buscarPorUsername, 
-  cadastrar
+  cadastrar,
+  buscarPerfil
 };

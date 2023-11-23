@@ -17,8 +17,23 @@ function implementarFkPerfil(req, res) {
                 res.status(500).json(erro.sqlMessage);
             }
         );
-
 }
+
+
+function buscarPerfil(req, res) {
+  var username = req.params.username;
+
+  perfilModel.buscarPerfil(username).then((resultado) => {
+    if (resultado.length > 0) {
+      console.log(resultado);
+      res.status(200).json(resultado);
+    } else {
+      res.status(403).send("perfil não existe)");
+    }
+    
+  });
+}
+
 
 function buscarPorUsername(req, res) {
   var username = req.params.username;
@@ -42,7 +57,6 @@ function cadastrar(req, res) {
   var nasc = req.body.nasc
   var numero = req.body.numero
   var biografia = req.body.biografia
-  var experiencia = req.body.experiencia
   var equipe = req.body.equipe
   var carro = req.body.carro
   var pista = req.body.pista
@@ -86,5 +100,6 @@ function cadastrar(req, res) {
 module.exports = {
   implementarFkPerfil,
   buscarPorUsername,
-  cadastrar
+  cadastrar,
+  buscarPerfil
 };
