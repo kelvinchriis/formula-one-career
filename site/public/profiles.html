@@ -1,17 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="style/carreira.css">
-	<title>Procure</title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style/carreira.css">
+    <title>Procure</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
+
 <body>
     <div style="display: flex; width: 100%;">
         <div class="header-left ">
-             <!-- home -->
-             <a href="tela_inicial.html">
+            <!-- home -->
+            <a href="tela_inicial.html">
                 <i class="fa-solid fa-house fa-2xl" style="color: #000000;margin-bottom: 55px; cursor: pointer;"></i>
             </a>
             <!-- busca perfil -->
@@ -23,9 +27,10 @@
                 <i class="fa-solid fa-user fa-2xl" style="color: #000000;margin-bottom: 58px; cursor: pointer;"></i>
             </a>
             <!-- sair -->
-            <i onclick="sair()" class="fa-solid fa-right-from-bracket fa-2xl" style="color: #000000; margin-bottom: 46px; cursor: pointer;"></i>
-       </div>
-       <div class="dash">
+            <i onclick="sair()" class="fa-solid fa-right-from-bracket fa-2xl"
+                style="color: #000000; margin-bottom: 46px; cursor: pointer;"></i>
+        </div>
+        <div class="dash">
             <!-- create perfil init -->
             <div class="main" id="initt" style="flex-direction: column;">
                 <div style="display: flex; flex-direction: column; align-items: center;">
@@ -33,46 +38,44 @@
                     <input type="text" oninput="buscar_perfil()" id="inputUsername" placeholder="Username">
                 </div>
                 <div class="tela-user" id="show_users">
-                    <div class="card-user">
-                        <h1 id="name_user">Usuário 1</h1>
-                        <div class="img-user" id="img_user"></div>
-                    </div>
                 </div>
             </div>
         </div>
     </div>
 </body>
+
 </html>
 
 <script>
     function buscar_perfil() {
-        var username = inputUsername.value;
+        show_users.innerHTML = ``
 
-        function pegarIdPerfil(username) {
-        fetch(`perfil/perfil/${username}`)
-            .then(response => {
-                if (response.ok) {
-                    console.log(response)
-                    for(i=0;i<response.lengh;i++){
-                        show_users.innerHTML += `
+        var username = inputUsername.value;
+        fetch(`perfil/perfil/${username}`, {
+            method: "GET",
+        })
+            .then(function (response) {
+                if (!response.ok) {
+                    throw new Error('Erro ao carregar os dados');
+                }
+                return response.json();
+            })
+            .then(function (perfil) {
+                console.log(perfil);
+
+                if (!perfil || perfil.length === 0) {
+                    console.error('Nenhum dado de empresa encontrado.');
+                    return;
+                }
+
+                for (i = 0; i < perfil.length; i++) {
+                    show_users.innerHTML += `
                             <div class="card-user">
-                                <h1 id="name_user">${response[i].nome}</h1>
-                                <div class="img-user" style="background-image: url('${response[i].}.png')" id="img_user${i}"></div>
+                                <h1 id="name_user">${perfil[i].username}</h1>
+                                <div class="img-user" id="img_user"></div>
                             </div>
-                        `
-                        
-                    }
-                } else{
-                    throw new Error('Erro ao consultar o ID');
+                    `
                 }
             })
-            .catch(error => {
-                // Lidar com erros aqui
-                console.error('Ocorreu um erro:', error);
-            });
-    }
-        for(i=0;) {
-            
-        }
     }
 </script>

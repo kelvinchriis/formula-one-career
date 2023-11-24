@@ -22,18 +22,17 @@ create table piloto (
     nome varchar(50),
     nacionalidade varchar(45),
     qtdTitulo int,
-    dataNasc date,
-    numeroCarro int,
-    fkEquipePiloto int,
-    constraint fkEquipePiloto foreign key(fkEquipePiloto) references equipe(idEquipe)
+    numeroCarro int
 );
 
 create table pista (
 	idPista int primary key,
     nome varchar(45),
-    pais varchar(45),
-    comprimento float,
-    qtaVolta int
+    anoInicio int,
+    qtaVolta int,
+    comprimentoCiruito float,
+    comprimentoCorrida float,
+    voltaRapida varchar(100)
 );
 
 create table perfil (

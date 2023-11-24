@@ -24,16 +24,28 @@ function buscarPerfil(req, res) {
   var username = req.params.username;
 
   perfilModel.buscarPerfil(username).then((resultado) => {
-    if (resultado.length > 0) {
       console.log(resultado);
       res.status(200).json(resultado);
-    } else {
-      res.status(403).send("perfil não existe)");
-    }
-    
   });
 }
 
+// function meuPerfil(){
+//   var fk_perfil = req.params.fk_perfil;
+//   perfilModel.perfilModel(fk_perfil).then((resultado) => {
+//     console.log(resultado);
+//     res.json({
+//       username: resultado[0].username,
+//       // data_nasc: resultado[0].dataNasc,
+//       nacionalidade: resultado[0].nacionalidade,
+//       numero_carro: resultado[0].numeroCarro,
+//       biografia: resultado[0].biografia,
+//       fk_equipe: resultado[0].fkEquipe,
+//       fk_carro: resultado[0].fkCarro,
+//       fk_pista: resultado[0].fkPistaPreferida,
+//       fk_piloto: resultado[0].fkPilotoInspiracao
+//     });
+//   });
+// }
 
 function buscarPorUsername(req, res) {
   var username = req.params.username;
@@ -97,9 +109,26 @@ function cadastrar(req, res) {
   }
 }
 
+function salvar(req, res) {
+  const imagem = req.file.filename;
+
+  const {nome, email} = req.body
+
+  const usuario = { nome, email, imagem }
+  
+  usuarioModel.salvar(usuario)
+  .then(resultado => {
+    res.status(201).send("Usuario criado com sucesso");
+  }).catch(err => {
+    res.status(500).send(err);
+  });
+}
+
 module.exports = {
   implementarFkPerfil,
   buscarPorUsername,
   cadastrar,
-  buscarPerfil
+  buscarPerfil,
+  // meuPerfil
+  salvar
 };
