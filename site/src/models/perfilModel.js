@@ -6,11 +6,11 @@ function buscarPorUsername(username) {
   return database.executar(query);
 }
 
-function meuPerfil(fkPerfil) {
-  var query = `SELECT * FROM perfil as p join usuario as u on fk_perfil = idPerfil where idPerfil = ${fkPerfil}`
-  console.log("Executando a instrução SQL: \n" + query);
-  return database.executar(query);
-}
+// function meuPerfil(fkPerfil) {
+//   var query = `SELECT * FROM perfil as p join usuario as u on fk_perfil = idPerfil where idPerfil = ${fkPerfil}`
+//   console.log("Executando a instrução SQL: \n" + query);
+//   return database.executar(query);
+// }
 
 function buscarPerfil(username) {
   var query = `select username from perfil where username like '${username}%'`;
@@ -35,5 +35,5 @@ module.exports = {
   buscarPorUsername,
   cadastrar,
   buscarPerfil,
-  meuPerfil
+  // meuPerfil
 };

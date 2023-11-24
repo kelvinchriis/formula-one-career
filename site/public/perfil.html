@@ -51,7 +51,7 @@
                     <img src="./assets/index/carro2.png" style="width: 450px;">
                 </div>
             </div>
-            <div class="main" id="profilee" style="padding: 0 9%; display: none;">
+            <div class="main" id="profilee" style="display: none; align-items: center;">
             	<div style="display: flex; width: 100%; align-items: center;">
             		<div style="display: flex; width: 800px; flex-wrap: wrap; border-radius: 20px; background-color: rgba(0, 0, 0, 0.2); margin-top: 20px;">
 
@@ -136,42 +136,43 @@
     if (fk == "null" || fk == undefined) {
        initt.style.display = "flex"
     } else{
-		fetch(`perfil/myprofile/${sessionStorage.FK_PERFIL}`, {
-            method: "GET",
-        })
-		.then(function (resposta) {
-            console.log("ESTOU NO THEN DO entrar()!")
+		profilee.style.display = "flex"
+		// fetch(`perfil/myprofile/${sessionStorage.FK_PERFIL}`, {
+        //     method: "GET",
+        // })
+		// .then(function (resposta) {
+        //     console.log("ESTOU NO THEN DO entrar()!")
 
-            if (resposta.ok) {
-                console.log(resposta);
+        //     if (resposta.ok) {
+        //         console.log(resposta);
 
-                resposta.json().then(json => {
-                    console.log(json);
-                    console.log(JSON.stringify(json));
-                    sessionStorage.EMAIL_USUARIO = json.email;
-                    sessionStorage.NOME_USUARIO = json.nome;
-                    sessionStorage.ID_USUARIO = json.id;
-                    sessionStorage.FK_PERFIL = json.fk_perfil;
+        //         resposta.json().then(json => {
+        //             console.log(json);
+        //             console.log(JSON.stringify(json));
+        //             sessionStorage.EMAIL_USUARIO = json.email;
+        //             sessionStorage.NOME_USUARIO = json.nome;
+        //             sessionStorage.ID_USUARIO = json.id;
+        //             sessionStorage.FK_PERFIL = json.fk_perfil;
 
-                    setTimeout(function () {
-                        window.location = "tela_inicial.html";
-                    }, 1000); // apenas para exibir o loading
+        //             setTimeout(function () {
+        //                 window.location = "tela_inicial.html";
+        //             }, 1000); // apenas para exibir o loading
 
-                });
+        //         });
 
-            } else {
+        //     } else {
 
-                console.log("Houve um erro ao tentar buscar perfil!");
+        //         console.log("Houve um erro ao tentar buscar perfil!");
 
-                resposta.text().then(texto => {
-                    console.error(texto);
-                });
-            }
+        //         resposta.text().then(texto => {
+        //             console.error(texto);
+        //         });
+        //     }
 
-        }).catch(function (erro) {
-            console.log(erro);
-        })
+        // }).catch(function (erro) {
+        //     console.log(erro);
+        // })
 
-        return false;
+        // return false;
     }
 </script>

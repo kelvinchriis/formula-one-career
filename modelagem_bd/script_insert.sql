@@ -17,12 +17,12 @@ insert into carro values
 (7, 2002, "Ferrari F2002", 1),
 (8, 2003, "Ferrari F2003-GA", 1),
 (9, 2010, "Ferrari F10", 1),
-(10, 2011, "Ferrari 150° Italia")
+(10, 2011, "Ferrari 150° Italia", 1),
 (11, 2012, "Ferrari F2012", 1),
 (12, 2013, "Ferrari F138", 1),
 (13, 2014, "Ferrari F14 T", 1),
 (14, 2015, "Ferrari SF15-T", 1),
-(15, 2016, "Ferrari SF16-H")
+(15, 2016, "Ferrari SF16-H", 1),
 (16, 2017, "Ferrari SF70H", 1),
 (17, 2018, "Ferrari SF71H", 1),
 (18, 2019, "Ferrari SF90", 1),
@@ -78,7 +78,7 @@ insert into carro values
 (68, 2012, "Williams FW34", 4),
 (69, 2013, "Williams FW35", 4),
 (70, 2014, "Williams FW36", 4),
-(71, 2015 "Williams FW37", 4),
+(71, 2015, "Williams FW37", 4),
 (72, 2016, "Williams FW38", 4),
 (73, 2017,  "Williams FW40", 4),
 (74, 2018, "Williams FW41", 4),
@@ -117,15 +117,15 @@ insert into pista values
 insert into piloto values 
 (1, "Ayton Senna", "Brasileiro", 3, 12),
 (2, "Schumacher", "Alemão", 7, 1),
-(3, "Hamilton", "Britânico", 7, 44)
-(4, "Fangio, Argentino", 5, 0)
-(5, "Alain Prost", "Francês", 4, 0)
-(6, "Niki Lauda", "Austríaco", 3, 0)
-(7, "Jackie Stewart", "Escocês", 3, 0)
-(8 "Vettel", "Alemão", 4, 0)
-(9, "Alonso", "Espanhol", 2, 0)
-(10, "Nigell Mansell", "Britânico", 1, 0)
-(11, "Fittipaldi", "Brasileiro", 2, 0)
-(12, "Nelson Piquet", "Brasileiro", 3, 0)
-(13, "Jochen Rindt", "Austríaco", 1, 0)
-(14, "Kimi Räikkönen", "Finlandês", 1, 0)
+(3, "Hamilton", "Britânico", 7, 44),
+(4, "Fangio", "Argentino", 5, 0),
+(5, "Alain Prost", "Francês", 4, 0),
+(6, "Niki Lauda", "Austríaco", 3, 0),
+(7, "Jackie Stewart", "Escocês", 3, 0),
+(8, "Vettel", "Alemão", 4, 0),
+(9, "Alonso", "Espanhol", 2, 0),
+(10, "Nigell Mansell", "Britânico", 1, 0),
+(11, "Fittipaldi", "Brasileiro", 2, 0),
+(12, "Nelson Piquet", "Brasileiro", 3, 0),
+(13, "Jochen Rindt", "Austríaco", 1, 0),
+(14, "Kimi Räikkönen", "Finlandês", 1, 0);

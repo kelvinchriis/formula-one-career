@@ -52,9 +52,9 @@ img {
     justify-content: center;
     padding: 20px 20px;
     border-radius: 30px;
-    margin: 20px;
-    height: 170px;
-    width: 380px;
+    margin: 15px;
+    height: 150px;
+    width: 350px;
     background-color: #F7F4F1;
     /* background: linear-gradient(rgba(97, 48, 48, 0.08), rgba(97, 48, 48, 0.08), rgba(77, 71, 67, 0.548)); */
     cursor: pointer;
