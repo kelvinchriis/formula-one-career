@@ -1,5 +1,11 @@
 var database = require("../database/config");
 
+function pilotosFavoritos() {
+    var query = `select fkPilotoInspiracao, COUnT(*) as repeticoes from perfil group by fkPilotoInspiracao order by repeticoes desc;`;
+    console.log(query)
+    return database.executar(query);
+}
+
 function buscarUltimasMedidas(idAquario, limite_linhas) {
 
     instrucaoSql = ''
@@ -64,5 +70,6 @@ function buscarMedidasEmTempoReal(idAquario) {
 
 module.exports = {
     buscarUltimasMedidas,
-    buscarMedidasEmTempoReal
+    buscarMedidasEmTempoReal,
+    pilotosFavoritos
 }

@@ -1,3 +1,7 @@
+var fk = sessionStorage.FK_PERFIL;
+	if (fk != "null") {
+        window.location = "perfil.html"
+    } 
 
 
     document.getElementById('inputFile').addEventListener('change', function() {
@@ -12,6 +16,9 @@
     });
 
     function cadastrar() {
+
+        botao.style.display = "none"
+        onlo.style.display = "block"
         //Recupere o valor da nova input pelo nome do id
         // Agora vá para o método fetch logo abaixo
         var usernameVar = inputUsername.value;
@@ -98,12 +105,13 @@
             },
             body: JSON.stringify({
                 fk_perfil: sessionStorage.ID_PERFIL
+                
             })
         }).then(function (resposta) {
 
             if (resposta.ok) {
-                alert("deu certo")
                 sessionStorage.FK_PERFIL = sessionStorage.ID_PERFIL
+                window.location = "perfil.html"
             } else if (resposta.status == 404) {
                 window.alert("Deu 404!");
             } else {

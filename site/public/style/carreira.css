@@ -86,7 +86,7 @@ img {
 }
 
 .box-escuderia:hover {
-    background-color: #bdb4ab;
+    background-color: rgba(105, 53, 50, 0.568);
 }
 
 label {
@@ -123,6 +123,10 @@ button {
     margin: 20px;
     box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
     cursor: pointer;
+}
+
+.card:hover {
+    background-color: rgba(105, 53, 50, 0.568);
 }
 
 .card-pilot {
@@ -362,6 +366,20 @@ tr:nth-child(even) {
     left: 4%;
     justify-content: center;
 }
+
+.over {
+    display: flex;
+    width: 96%;
+    height: 100vh;
+    top: 0;
+    left: 4%;
+    background-color: #e4e7eb;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    z-index: 999;
+}
+
 .tela_cadastro {
     display: flex;
     width: 96%;

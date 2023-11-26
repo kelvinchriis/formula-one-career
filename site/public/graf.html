@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style/carreira.css">
+    <title>Circuitos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <style>
+        a {
+            all: unset;
+        }
+
+        .titulo-profile {
+            margin: 15px 0 0 0;
+            font-size: 20px;
+        }
+
+        .bar-pilot {
+            border-radius: 10px 10px 0 0;
+            width: 100px;
+            text-align: center;
+            transition: 0.5s;
+        }
+
+        .img-pilot-graf {
+            height: 120px;
+            width: auto;
+            margin-bottom: -1px;
+        }
+
+        .nome-pilot-graf {
+            width: 150px;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        .h1-pilot-graf {
+            font-size: 10pt;
+            font-weight: 600;
+        }
+
+        .base-graf {
+            width: 100%;
+            height: 50px;
+            background-color: rgb(0, 0, 0);
+            display: flex;
+            justify-content: space-around;
+            border-top: 1px solid black;
+            color: white;
+            border-radius: 10px;
+        }
+
+        .grafico{
+            height: 500px; 
+            width: 650px; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: end;
+            background-color:rgba(0,0,0,0.1);
+            padding: 0 15px 15px 15px;
+            border-radius: 20px;
+        }
+
+        .main_bar {
+            height: 320px; 
+            color: #ffffff; 
+            display: flex; 
+            justify-content: space-around; 
+            align-items: end;
+        }
+
+        .coluna-graf {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .bar1 {
+            background-color: rgba(141, 27, 27, 0.8); 
+        }
+        .bar2 {
+            background-color: rgba(151, 45, 31, 0.8);
+        }
+        .bar3 {
+            background-color: rgba(223, 112, 9, 0.8);
+        }
+        .bar4 {
+            background-color: rgba(209, 147, 12, 0.8);
+        }
+        .bar5 {
+            background-color: rgba(209, 147, 12, 0.8);
+        }
+        .bar1:hover {
+            background-color: rgba(141, 27, 27, 1); 
+        }
+        .bar2:hover {
+            background-color: rgba(151, 45, 31, 1);
+        }
+        .bar3:hover {
+            background-color: rgba(223, 112, 9, 1);
+        }
+        .bar4:hover {
+            background-color: rgba(209, 147, 12, 1);
+        }
+        .bar5:hover {
+            background-color: rgba(209, 147, 12, 1);
+        }
+        .miis {
+            height: 500px; 
+            width: 550px; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: end;
+            background-color:rgba(0,0,0,0.1);
+            padding: 0 15px 15px 15px;
+            border-radius: 20px;
+        }
+    </style>
+</head>
+
+<body onload="plotarGraf()">
+    <div style="display: flex; width: 100%;">
+        <div class="header-left ">
+            <!-- home -->
+            <a href="tela_inicial.html">
+                <i class="fa-solid fa-house fa-2xl" style="color: #000000;margin-bottom: 35px; cursor: pointer;"></i>
+            </a>
+            <!-- busca perfil -->
+            <a href="profiles.html">
+                <img src="assets/index/user-black.png" style="width: 42px; height: auto; margin-bottom: 25px; cursor: pointer;">
+            </a>
+            <!-- perfil pessoal -->
+            <a href="perfil.html">
+                <i class="fa-solid fa-user fa-2xl" style="color: #000000;margin-bottom: 50px; cursor: pointer;"></i>
+            </a>
+            <a href="#">
+                <i class="fa-solid fa-star fa-2xl" style="color: #ffffff;margin-bottom: 55px; cursor: pointer;"></i>
+            </a>
+            <!-- sair -->
+            <i onclick="sair()" class="fa-solid fa-right-from-bracket fa-2xl"
+                style="color: #000000; margin-bottom: 46px; cursor: pointer;"></i>
+        </div>
+        <div class="dash">
+            <div class="main" id="initt">
+                <div style="width: 100%; display: flex; justify-content: space-around;">
+                    <!-- bloco do grafico -->
+                    <div class="grafico">
+                        <div style="height: 130px; width: 100%;"><h2 style="font-weight: 600; font-size: 26pt; margin-top: 20px; text-align: center;">TOP 5 PILOTOS FAVORITOS</h2></div>
+                        <!-- colunas grafico -->
+                        <div class="main_bar">
+                            <div class="coluna-graf">
+                                <img id="img_pilot0" class="img-pilot-graf" alt="">
+                                <div class="bar-pilot bar1" id="bar_pilot0">
+                                    <h2 id="percent_pilot0"></h2>
+                                </div>
+                            </div>
+                            <div class="coluna-graf">
+                                <img id="img_pilot1" class="img-pilot-graf" alt="">
+                                <div class="bar-pilot bar2" id="bar_pilot1">
+                                    <h2 id="percent_pilot1"></h2>
+                                </div>
+                            </div>
+                            <div class="coluna-graf">
+                                <img  id="img_pilot2" class="img-pilot-graf" alt="">
+                                <div class="bar-pilot bar3" id="bar_pilot2">
+                                    <h2 id="percent_pilot2"></h2>
+                                </div>
+                            </div>
+                            <div class="coluna-graf">
+                                <img id="img_pilot3" class="img-pilot-graf" alt="">
+                                <div class="bar-pilot bar4" id="bar_pilot3">
+                                    <h2 id="percent_pilot3"></h2>
+                                </div>
+                            </div>
+                            <div class="coluna-graf">
+                                <img id="img_pilot4" class="img-pilot-graf" alt="">
+                                <div class="bar-pilot bar5" id="bar_pilot4">
+                                    <h2 id="percent_pilot4"></h2>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- base grafico -->
+                        <div class="base-graf">
+                            <div class="nome-pilot-graf">
+                                <h1 class="h1-pilot-graf" id="nome_pilot0"></h1>
+                            </div>
+                            <div class="nome-pilot-graf">
+                                <h1 class="h1-pilot-graf" id="nome_pilot1"></h1>
+                            </div>
+                            <div class="nome-pilot-graf">
+                                <h1 class="h1-pilot-graf" id="nome_pilot2"></h1>
+                            </div>
+                            <div class="nome-pilot-graf">
+                                <h1 class="h1-pilot-graf" id="nome_pilot3"></h1>
+                            </div>
+                            <div class="nome-pilot-graf">
+                                <h1 class="h1-pilot-graf" id="nome_pilot4"></h1>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="miis">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+</body>
+
+</html>
+<script>
+    
+    var nomes_pilotos = [
+        'null',
+        'Ayton Senna',
+        'Schumacher',
+        'Hamilton',
+        'Fangio',
+        'Alain Prost',
+        'Niki Lauda',
+        'Jackie Stewart',
+        'Vettel',
+        'Alonso',
+        'Nigell Mansell',
+        'Fittipaldi',
+        'Nelson Piquet',
+        'Jochen Rindt',
+        'Kimi Räikkönen',
+    ]
+
+    var list_img = [
+        img_pilot0,
+        img_pilot1,
+        img_pilot2,
+        img_pilot3,
+        img_pilot4
+    ]
+
+    var list_bar = [
+        bar_pilot0,
+        bar_pilot1,
+        bar_pilot2,
+        bar_pilot3,
+        bar_pilot4
+    ]
+
+    var nome = [
+        nome_pilot0,
+        nome_pilot1,
+        nome_pilot2,
+        nome_pilot3,
+        nome_pilot4
+    ]
+
+    var percent_bar = [
+        percent_pilot0,
+        percent_pilot1,
+        percent_pilot2,
+        percent_pilot3,
+        percent_pilot4
+    ] 
+
+    var qtd_likes = 0;
+
+    // select fkPilotoInspiracao, COUnT(*) as repeticoes from perfil group by fkPilotoInspiracao order by fkPilotoInspiracao desc;
+    function plotarGraf() {
+        fetch(`/medidas/pilotos/`, {
+            method: "GET",
+        })
+            .then(function (response) {
+                if (!response.ok) {
+                    throw new Error('Erro ao carregar os dados');
+                }
+                return response.json();
+            })
+            .then(function (pilotos) {
+                console.log(pilotos);
+
+                if (!pilotos || pilotos.length === 0) {
+                    console.error('Nenhum dado de piloto encontrado.');
+                    return;
+                }
+
+                for (i = 0; i <= 4; i++) {
+                    qtd_likes += pilotos[i].repeticoes
+                }
+
+                // 320 max pixel
+                for (i = 0; i <= 4; i++) {
+                    var percent = pilotos[i].repeticoes / qtd_likes
+                    var tamanho_bar = percent * 320 // valor em pixel para barra
+                    list_img[i].src = `/assets/pilotos/${pilotos[i].fkPilotoInspiracao}.png`
+                    list_bar[i].style.height = `${tamanho_bar+50}px`
+                    nome[i].innerHTML = `${nomes_pilotos[pilotos[i].fkPilotoInspiracao]}`
+                    percent_bar[i].innerHTML = `${(percent*100).toFixed()}%`
+                }
+            })
+            .catch(function (error) {
+                console.error('Erro:', error);
+            });
+    }
+</script>

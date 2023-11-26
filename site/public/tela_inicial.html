@@ -21,21 +21,25 @@
 <body>
     <!-- <div class="overlay-container" style="background-color: brown; z-index: 6;" id="loading_page"></div> -->
     <div style="display: flex; width: 100%;">
-        <div class="header-left" id="menu_ativo">
+        <div class="header-left ">
             <!-- home -->
             <a href="#">
-                <i class="fa-solid fa-house fa-2xl" style="color: #ffffff;margin-bottom: 55px; cursor: pointer;"></i>
+                <i class="fa-solid fa-house fa-2xl" style="color: #ffffff;margin-bottom: 35px; cursor: pointer;"></i>
             </a>
             <!-- busca perfil -->
             <a href="profiles.html">
-                <i class="fa-solid fa-star fa-2xl" style="color: #000000;margin-bottom: 55px; cursor: pointer;"></i>
+                <img src="assets/index/user-black.png" style="width: 42px; height: auto; margin-bottom: 25px; cursor: pointer;">
             </a>
             <!-- perfil pessoal -->
             <a href="perfil.html">
-                <i class="fa-solid fa-user fa-2xl" style="color: #000000;margin-bottom: 58px; cursor: pointer;"></i>
+                <i class="fa-solid fa-user fa-2xl" style="color: #000000;margin-bottom: 50px; cursor: pointer;"></i>
+            </a>
+            <a href="graf.html">
+                <i class="fa-solid fa-star fa-2xl" style="color: #000000;margin-bottom: 55px; cursor: pointer;"></i>
             </a>
             <!-- sair -->
-            <i onclick="sair()" class="fa-solid fa-right-from-bracket fa-2xl" style="color: #000000; margin-bottom: 46px; cursor: pointer;"></i>
+            <i onclick="sair()" class="fa-solid fa-right-from-bracket fa-2xl"
+                style="color: #000000; margin-bottom: 46px; cursor: pointer;"></i>
         </div>
         <div class="dash">
             <!-- <div style="display: flex; justify-content: center; align-items: center; width: 100%; height: 100px; background-color: rgb(12, 46, 109); text-align: center; padding: 0 0 0 73px; color: white; position: fixed; top: 0; z-index: 5;">
@@ -294,18 +298,20 @@
             </div>
 
             <div class="table-last_gp">
-                <h1 class="h1-title-block" style="margin-bottom: 0;">Último Gran Prix - Round 21</h1>
-                <h3 style="margin: 0 0 40px 0; font-family: f2, sans-serif; font-size: 10pt;">FORMULA 1 ROLEX GRANDE
-                    PRÊMIO DE SÃO PAULO 2023</h3>
+                <h1 class="h1-title-block" style="margin-bottom: 0;">Último Gran Prix - Round 22</h1>
+                
+                <h3 style="margin: 0 0 40px 0; font-family: f2, sans-serif; font-size: 10pt;">FORMULA 1 HEINEKEN SILVER LAS VEGAS GRAND PRIX 2023</h3>
                 <div style="display: flex; justify-content: center; width: 95%;">
                     <div class="race-card">
+                        <!-- segundo lugar -->
                         <div style="width: 50%;">
-                            <img src="assets/pilotos/Lando Norris 4.avif" style="width: 100%; height: auto;">
+                            <img src="assets/pilotos/Charles Leclerc 16.avif" style="width: 100%; height: auto;">
                             <div class="pilot-ranking" style="height: 70px;">
-                                <img src="assets/escuderias/mclaren.png" style="height: 30px; width: auto; margin:0;">
-                                <h1 class="h1-title-block" style="font-size: 10pt; margin: 0;">Lando Norris</h1>
+                                <img src="assets/escuderias/ferrari.png" style="height: 30px; width: auto; margin:0;">
+                                <h1 class="h1-title-block" style="font-size: 10pt; margin: 0;">Charles Leclerc</h1>
                             </div>
                         </div>
+                        <!-- primeiro lugar -->
                         <div style="width: 50%;">
                             <img src="assets/pilotos/Max Verstappen 1.avif" style="width: 100%; height: auto;" >
                             <div class="pilot-ranking" style="height: 100px;">
@@ -313,17 +319,18 @@
                                 <h1 class="h1-title-block" style="font-size: 10pt;">Max <br>Verstappen</h1>
                             </div>
                         </div>
+                        <!-- terceiro lugar -->
                         <div style="width: 50%;">
-                            <img src="assets/pilotos/Fernando Alonso 14.avif" style="width: 100%; height: auto;">
+                            <img src="assets/pilotos/Oscar Piastri 81.avif" style="width: 100%; height: auto;">
                             <div class="pilot-ranking" style="height: 50px;">
-                                <img src="assets/escuderias/astonmartin.png" style="height: 25px; width: auto;">
-                                <h1 class="h1-title-block" style="font-size: 10pt;">Fernando <br>Alonso</h1>
+                                <img src="assets/escuderias/mclaren.png" style="height: 25px; width: auto;">
+                                <h1 class="h1-title-block" style="font-size: 10pt;">Oscar Piastri</h1>
                             </div>
                         </div>
                     </div>
                 </div>
                 <div class="card" style="width: 100%; height: 700px; background-color: unset; box-shadow: unset; margin: 0; align-items: center; justify-content: flex-start;">
-                    <img src="./assets/circuitos/21.png"
+                    <img src="./assets/circuitos/22.png"
                         style="width: 90%; height: auto;">
                 </div>
                 <!-- bloco overley dependendo da fk null -->

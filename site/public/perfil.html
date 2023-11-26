@@ -6,12 +6,23 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="style/carreira.css">
 	<title>Circuitos</title>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+		integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+		crossorigin="anonymous" referrerpolicy="no-referrer" />
 	<style>
-		a{all: unset;}
+		a {
+			all: unset;
+		}
+
 		.titulo-profile {
-			margin: 15px 0 0 0; 
+			margin: 15px 0 0 0;
 			font-size: 20px;
+		}
+
+		.content-json {
+			margin: 0;
+			font-family: f2, sans-serif;
+			font-size: 15px;
 		}
 	</style>
 </head>
@@ -19,112 +30,126 @@
 <body>
 	<div style="display: flex; width: 100%;">
 		<div class="header-left ">
-			 <!-- home -->
+			<!-- home -->
             <a href="tela_inicial.html">
-                <i class="fa-solid fa-house fa-2xl" style="color: #000000;margin-bottom: 55px; cursor: pointer;"></i>
+                <i class="fa-solid fa-house fa-2xl" style="color: #000000;margin-bottom: 35px; cursor: pointer;"></i>
             </a>
             <!-- busca perfil -->
             <a href="profiles.html">
-                <i class="fa-solid fa-star fa-2xl" style="color: #000000;margin-bottom: 55px; cursor: pointer;"></i>
+                <img src="assets/index/user-black.png" style="width: 42px; height: auto; margin-bottom: 25px; cursor: pointer;">
             </a>
             <!-- perfil pessoal -->
-            <a href="perfil.html">
-                <i class="fa-solid fa-user fa-2xl" style="color: #ffffff;margin-bottom: 58px; cursor: pointer;"></i>
+            <a href="#">
+                <i class="fa-solid fa-user fa-2xl" style="color: #ffffff;margin-bottom: 50px; cursor: pointer;"></i>
+            </a>
+            <a href="graf.html">
+                <i class="fa-solid fa-star fa-2xl" style="color: #000000;margin-bottom: 55px; cursor: pointer;"></i>
             </a>
             <!-- sair -->
-            <i onclick="sair()" class="fa-solid fa-right-from-bracket fa-2xl" style="color: #000000; margin-bottom: 46px; cursor: pointer;"></i>
+            <i onclick="sair()" class="fa-solid fa-right-from-bracket fa-2xl"
+                style="color: #000000; margin-bottom: 46px; cursor: pointer;"></i>
 		</div>
 		<div class="dash">
 			<!-- create perfil init -->
-            <div class="main" id="initt" style=" display: none;">
-                <div style="width: 1100px; height: 70vh; display: flex; flex-direction: column; align-items: center; justify-content: center;">
-                    <h2 style="font-size: 35pt;">Crie seu perfil de piloto da Fórmula 1</h2>
-                    <h1 style="width: 71%; text-align: center;">Conecte-se com aficionados da Fórmula 1! Troque experiências, encontre fãs da sua scuderia favorita ou do seu piloto preferido. Já viveu a emoção de assistir ao vivo? Compartilhe sua história e faça parte dessa comunidade apaixonada!</h1>
-                    <a href="carrer.html">
-	                    <div style="width: 200px; user-select: none; cursor: pointer; height: 60px; border-radius: 20px; background-color: black; color: white; display: flex; justify-content: center; align-items: center;">
-	                        <h1 style="margin: 0;">Vámos lá</h1>
-	                    </div>
-                    </a>
-                </div>
-                <div style="width: 100%; height: 30vh; display: flex; justify-content: space-between; align-items: flex-end;">
-                    <img src="./assets/index/carro3.png" style="width: 450px;">
-                    <img src="./assets/index/carro2.png" style="width: 450px;">
-                </div>
-            </div>
-            <div class="main" id="profilee" style="display: none; align-items: center;">
-            	<div style="display: flex; width: 100%; align-items: center;">
-            		<div style="display: flex; width: 800px; flex-wrap: wrap; border-radius: 20px; background-color: rgba(0, 0, 0, 0.2); margin-top: 20px;">
+			<div class="main" id="initt" style=" display: none;">
+				<div
+					style="width: 1100px; height: 70vh; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+					<h2 style="font-size: 35pt;">Crie seu perfil de piloto da Fórmula 1</h2>
+					<h1 style="width: 71%; text-align: center;">Conecte-se com aficionados da Fórmula 1! Troque
+						experiências, encontre fãs da sua scuderia favorita ou do seu piloto preferido. Já viveu a
+						emoção de assistir ao vivo? Compartilhe sua história e faça parte dessa comunidade apaixonada!
+					</h1>
+					<a href="carrer.html">
+						<div
+							style="width: 200px; user-select: none; cursor: pointer; height: 60px; border-radius: 20px; background-color: black; color: white; display: flex; justify-content: center; align-items: center;">
+							<h1 style="margin: 0;">Vámos lá</h1>
+						</div>
+					</a>
+				</div>
+				<div
+					style="width: 100%; height: 30vh; display: flex; justify-content: space-between; align-items: flex-end;">
+					<img src="./assets/index/carro3.png" style="width: 450px; margin-left: 50px;">
+					<img src="./assets/index/carro2.png" style="width: 450px; margin-right: 50px;">
+				</div>
+			</div>
 
-	            		<div class="box-escuderia" onclick="mercedes()" style="height: 200px;width: 285px; margin-bottom: 0; margin-right: 0; background-color: #F7F4F1;">
-	                    	<img src="assets/escuderias/mercedes.png" style="width: 80%;">
-	                	</div>
+			<div class="over" style="display: none;" id="over">
+				<img src="assets/index/load.gif" style="width: 50px;" alt="">
+			</div>
+			<div class="main" id="profilee" style="display: none; align-items: center;">
+				<div
+					style="display: flex; width: 100%; align-items: center; justify-content: center; margin-top: 15px;">
+					<div
+						style=" width: 800px; height: 700px; border-radius: 20px; background-color: rgba(0, 0, 0, 0.2); margin-top: 20px; padding: 0 20px;">
+						<div
+							style="display: flex; width: 100%; height: 300px; justify-content: space-between; margin-top: 10px;">
+							<div class="box-escuderia" style="height: 80%; width: 35%; margin-bottom: 0; margin: 0; ">
+								<img style="width: 80%;" id="img_scud">
+							</div>
 
-	                	<div class="box-car" data-id="65" style="height: 195px; margin-bottom: 0; margin-right: 0; background-color: #F7F4F1;">
-	                    	<label style="font-size: 18pt">Williams FW19 1997</label>
-	                    	<img src="assets/carros/williams/Willams_FW19_1997.png">
-	                	</div>
+							<div class="box-car" data-id="65" style="height: 80%; margin: 0;  width: 53%;">
+								<label style="font-size: 18pt"></label>
+								<img id="img_car">
+							</div>
+						</div>
+						<div
+							style="display: flex; width: 100%; height: 400px;  justify-content: space-between; margin: 0;">
+							<div class="card-pilot" data-id="1"
+								style="margin: 0; width: 55%; height: 430px;  height: 90%;">
+								<h1 style="margin: 0;"></h1>
+								<img class="img-pilot" id="img_pilot">
+							</div>
+							<div class="card" data-id="1" style="margin: 0; height: 90%; ">
+								<img id="img_circuit" style="width: 100%">
+								<div>
+									<div class="line-card">
+										<div class="data-card">
+											<span>Primeiro Grande Prêmio</span>
+											<h2>2004</h2>
+										</div>
+										<div class="data-card">
+											<span>Número de Voltas</span>
+											<h2>57</h2>
+										</div>
+									</div>
+									<div class="line-card">
+										<div class="data-card">
+											<span>Comprimento do circuito</span>
+											<h2>5.412 KM</h2>
+										</div>
+										<div class="data-card">
+											<span>Distância da corrida</span>
+											<h2>308 KM</h2>
+										</div>
+									</div>
 
-		                <div class="card" data-id="1" style="margin-top: 10px; margin-right: 0; background-color: #F7F4F1;">
-		                    <img src="./assets/circuitos/Circuito Internacional do Bahrein 1º.png" style="width: 100%">
-		                    <div>
-		                        <div class="line-card">
-		                            <div class="data-card">
-		                                <span>Primeiro Grande Prêmio</span>
-		                                <h2>2004</h2>
-		                            </div>
-		                            <div class="data-card">
-		                                <span>Número de Voltas</span>
-		                                <h2>57</h2>
-		                            </div>
-		                        </div>
-		                        <div class="line-card">
-		                            <div class="data-card">
-		                                <span>Comprimento do circuito</span>
-		                                <h2>5.412 KM</h2>
-		                            </div>
-		                            <div class="data-card">
-		                                <span>Distância da corrida</span>
-		                                <h2>308 KM</h2>
-		                            </div>
-		                        </div>
-		                        <div class="line-card line-card-end">
-		                            <div class="data-card data-card-end">
-		                                <span>Registro volta mais rápida</span>
-		                                <div style="display: flex; align-items: flex-end;">
-		                                    <h2>1:31:447</h2> 
-		                                    <span>Pedro de la Rosa (2005)</span>
-		                                </div>
-		                            </div>
-		                        </div>
-		                    </div>
-		                </div>
+								</div>
+							</div>
 
-		                 <div class="card-pilot" data-id="1" style="margin-top: 10px; width: 400px; height: 420px; background-color: #F7F4F1;">
-		                    <h1 style="margin: 0;">Ayton Senna</h1>
-		                    <img src="assets/pilotos/1.png" class="img-pilot">
-		                </div>
-	                </div>
-	                <div style="display: flex; align-items: center; width: 400px;">
-	                	<div style="display: flex; flex-direction: column; width: 100%; align-items: center;">
-                             <div class="img-user" id="img-user"></div>
-                             <label class="file-input" style="margin-top: 30px;">
-                                 <span>Alterar foto</span>
-                                 <input type="file" id="inputFile" style="font-size: 12pt; width: 300px;"></input>
-                             </label>
-                             <div style="width: 100%; margin-top: 20px; text-align: center;">
-                             	<h2 class="titulo-profile">Nome</h2>
-                             	<h2 style="margin: 0; font-family: f2, sans-serif; font-size: 15px;">Kelvin Christian</h2>
-                             	<h2 class="titulo-profile">Nacionalidade</h2>
-                             	<h2 style="margin: 0; font-family: f2, sans-serif; font-size: 15px;">Brasileiro</h2>
-                             	<h2 class="titulo-profile">Data Nascimento</h2>
-                             	<h2 style="margin: 0; font-family: f2, sans-serif; font-size: 15px;">29/04/2004</h2>
-                             	<h2 class="titulo-profile">Número carro</h2>
-                             	<h2 style="margin: 0; font-family: f2, sans-serif; font-size: 15px;">44</h2>
-                             </div>
-                        </div>
-	                </div>
-                </div>
-            </div>
+
+						</div>
+					</div>
+					<div style="display: flex; align-items: center; width: 400px;">
+						<div style="display: flex; flex-direction: column; width: 100%; align-items: center;">
+							<div class="img-user" id="img-user" style="margin: 0;"></div>
+							<label class="file-input" style="margin-top: 30px;">
+								<span>Alterar foto</span>
+								<input type="file" id="inputFile" style="font-size: 12pt; width: 300px;"></input>
+							</label>
+							<div style="width: 80%; text-align: center;">
+								<h2 class="titulo-profile">Nome</h2>
+								<h2 class="content-json" id="nome"></h2>
+								<h2 class="titulo-profile">Nacionalidade</h2>
+								<h2 class="content-json" id="nasci"></h2>
+								<h2 class="titulo-profile">Data Nascimento</h2>
+								<h2 class="content-json" id="dtnasc"></h2>
+								<h2 class="titulo-profile">Número carro</h2>
+								<h2 class="content-json" id="num"></h2>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 		<script type="text/javascript" src="js/script.js"></script>
 </body>
@@ -133,46 +158,51 @@
 
 <script type="text/javascript">
 	var fk = sessionStorage.FK_PERFIL;
-    if (fk == "null" || fk == undefined) {
-       initt.style.display = "flex"
-    } else{
+	if (fk == "null") {
+		initt.style.display = "flex"
+	} else {
+		over.style.display = "flex"
 		profilee.style.display = "flex"
-		// fetch(`perfil/myprofile/${sessionStorage.FK_PERFIL}`, {
-        //     method: "GET",
-        // })
-		// .then(function (resposta) {
-        //     console.log("ESTOU NO THEN DO entrar()!")
+		perfil()
+	}
 
-        //     if (resposta.ok) {
-        //         console.log(resposta);
+	function perfil() {
+		fetch(`/perfil/myprofile/${sessionStorage.FK_PERFIL}`, {
+			method: "GET",
+		})
+			.then(function (response) {
+				if (!response.ok) {
+					throw new Error('Erro ao carregar os dados');
+				}
+				return response.json();
+			})
+			.then(function (perfil) {
+				console.log(perfil);
 
-        //         resposta.json().then(json => {
-        //             console.log(json);
-        //             console.log(JSON.stringify(json));
-        //             sessionStorage.EMAIL_USUARIO = json.email;
-        //             sessionStorage.NOME_USUARIO = json.nome;
-        //             sessionStorage.ID_USUARIO = json.id;
-        //             sessionStorage.FK_PERFIL = json.fk_perfil;
+				if (!perfil || perfil.length === 0) {
+					console.error('perfil não encontrado.');
+					return;
+				}
 
-        //             setTimeout(function () {
-        //                 window.location = "tela_inicial.html";
-        //             }, 1000); // apenas para exibir o loading
+				var dataString = perfil[0].dataNasc;
+				var data = new Date(dataString);
+				var dia = String(data.getUTCDate()).padStart(2, '0');
+				var mes = String(data.getUTCMonth() + 1).padStart(2, '0'); // O mês começa do zero, então adicionamos 1
+				var ano = data.getUTCFullYear();
+				var dataFormatada = dia + '-' + mes + '-' + ano;
 
-        //         });
-
-        //     } else {
-
-        //         console.log("Houve um erro ao tentar buscar perfil!");
-
-        //         resposta.text().then(texto => {
-        //             console.error(texto);
-        //         });
-        //     }
-
-        // }).catch(function (erro) {
-        //     console.log(erro);
-        // })
-
-        // return false;
-    }
+				nome.innerHTML = `${sessionStorage.NOME_USUARIO}`
+				nasci.innerHTML = `${perfil[0].nacionalidade}`
+				dtnasc.innerHTML = `${dataFormatada}`
+				num.innerHTML = `${perfil[0].numeroCarro}`
+				img_pilot.src = `assets/pilotos/${perfil[0].fkPilotoInspiracao}.png`
+				img_circuit.src = `./assets/circuitos/${perfil[0].fkPistaPreferida}.png`
+				img_scud.src = `assets/escuderias/${perfil[0].fkEquipe}.png`
+				img_car.src = `assets/carros/${perfil[0].fkCarro}.png`
+				over.style.display = "none"
+			})
+			.catch(function (error) {
+				console.error('Erro:', error);
+			});
+	}
 </script>

@@ -1,5 +1,13 @@
 var medidaModel = require("../models/medidaModel");
 
+
+function  pilotosFavoritos(req, res) {
+    medidaModel.pilotosFavoritos().then((resultado) => {
+        console.log(resultado);
+        res.status(200).json(resultado);
+    });
+}
+
 function buscarUltimasMedidas(req, res) {
 
     const limite_linhas = 7;
@@ -43,6 +51,6 @@ function buscarMedidasEmTempoReal(req, res) {
 
 module.exports = {
     buscarUltimasMedidas,
-    buscarMedidasEmTempoReal
-
+    buscarMedidasEmTempoReal,
+    pilotosFavoritos
 }

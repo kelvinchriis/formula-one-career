@@ -11,4 +11,8 @@ router.get("/tempo-real/:idAquario", function (req, res) {
     medidaController.buscarMedidasEmTempoReal(req, res);
 })
 
+router.get("/pilotos", function (req, res) {
+    medidaController.pilotosFavoritos(req, res);
+})
+
 module.exports = router;

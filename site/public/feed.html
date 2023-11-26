@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style/carreira.css">
+    <title>Circuitos</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <div style="display: flex; width: 100%;">
+        <div class="header-left ">
+            <!-- home -->
+            <a href="tela_inicial.html">
+                <i class="fa-solid fa-house fa-2xl" style="color: #000000;margin-bottom: 35px; cursor: pointer;"></i>
+            </a>
+            <!-- busca perfil -->
+            <a href="profiles.html">
+                <img src="assets/index/user-black.png" style="width: 42px; height: auto; margin-bottom: 25px; cursor: pointer;">
+            </a>
+            <!-- perfil pessoal -->
+            <a href="perfil.html">
+                <i class="fa-solid fa-user fa-2xl" style="color: #000000;margin-bottom: 50px; cursor: pointer;"></i>
+            </a>
+            <a href="#">
+                <i class="fa-solid fa-star fa-2xl" style="color: #ffffff;margin-bottom: 55px; cursor: pointer;"></i>
+            </a>
+            <!-- sair -->
+            <i onclick="sair()" class="fa-solid fa-right-from-bracket fa-2xl"
+                style="color: #000000; margin-bottom: 46px; cursor: pointer;"></i>
+        </div>
+        <div class="dash">
+            <div class="main" id="initt">
+                <div style="width: 800px; height: 300px; border: 1px solid black;"></div>
+            </div>
+        </div>
+</body>
+</html>
+
+<!-- -- listar todos
+select c.*, p.username from comentarios as c join perfil as p on fkPerfilComent = idPerfil order by dataComent desc;
+-- listar do user
+select c.*, p.username from comentarios as c join perfil as p on fkPerfilComent = idPerfil where p.idPerfil = 1 order by dataComent desc; -->

@@ -24,7 +24,7 @@ router.get("/perfil/:username", function (req, res) {
   perfilController.buscarPerfil(req, res);
 });
 
-router.get("/myprofile/:fkperfil", function (req, res) {
+router.get("/myprofile/:idperfil", function (req, res) {
   perfilController.meuPerfil(req, res);
 });
 
