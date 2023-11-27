@@ -7,13 +7,13 @@ function buscarPorUsername(username) {
 }
 
 function meuPerfil(fkPerfil) {
-  var query = `SELECT * FROM perfil as p join usuario as u on fk_perfil = idPerfil where idPerfil = ${fkPerfil}`
+  var query = `SELECT * FROM perfil where idPerfil = ${fkPerfil}`
   console.log("Executando a instrução SQL: \n" + query);
   return database.executar(query);
 }
 
 function buscarPerfil(username) {
-  var query = `select username from perfil where username like '${username}%'`;
+  var query = `select username, idPerfil from perfil where username like '${username}%'`;
   console.log("Executando a instrução SQL: \n" + query);
   return database.executar(query);
 }

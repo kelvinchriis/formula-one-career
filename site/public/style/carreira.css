@@ -370,7 +370,6 @@ tr:nth-child(even) {
 .over {
     display: flex;
     width: 96%;
-    height: 100vh;
     top: 0;
     left: 4%;
     background-color: #e4e7eb;
