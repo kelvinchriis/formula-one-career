@@ -1,9 +1,10 @@
-var avisoModel = require("../models/avisoModel");
+var comentariosModel = require("../models/comentariosModel");
 
 function listar(req, res) {
-    avisoModel.listar().then(function (resultado) {
+    comentariosModel.listar().then(function (resultado) {
         if (resultado.length > 0) {
-            res.status(200).json(resultado);
+            console.log(resultado)
+            res.status(201).json(resultado);
         } else {
             res.status(204).send("Nenhum resultado encontrado!")
         }
@@ -17,7 +18,7 @@ function listar(req, res) {
 function listarPorUsuario(req, res) {
     var idUsuario = req.params.idUsuario;
 
-    avisoModel.listarPorUsuario(idUsuario)
+    comentariosModel.listarPorUsuario(idUsuario)
         .then(
             function (resultado) {
                 if (resultado.length > 0) {
@@ -42,7 +43,7 @@ function listarPorUsuario(req, res) {
 function pesquisarDescricao(req, res) {
     var descricao = req.params.descricao;
 
-    avisoModel.pesquisarDescricao(descricao)
+    comentariosModel.pesquisarDescricao(descricao)
         .then(
             function (resultado) {
                 if (resultado.length > 0) {
@@ -61,20 +62,20 @@ function pesquisarDescricao(req, res) {
 }
 
 function publicar(req, res) {
-    var titulo = req.body.titulo;
-    var descricao = req.body.descricao;
-    var idUsuario = req.params.idUsuario;
+    var imagem = req.file.filename;
 
-    if (titulo == undefined) {
+    const { comentario, id_user } = req.body
+    
+
+    if (comentario == undefined) {
         res.status(400).send("O título está indefinido!");
-    } else if (descricao == undefined) {
-        res.status(400).send("A descrição está indefinido!");
-    } else if (idUsuario == undefined) {
+    } else if (id_user == undefined) {
         res.status(403).send("O id do usuário está indefinido!");
     } else {
-        avisoModel.publicar(titulo, descricao, idUsuario)
+        comentariosModel.publicar(comentario, id_user, imagem)
             .then(
                 function (resultado) {
+                    console.log(resultado);
                     res.json(resultado);
                 }
             )
@@ -92,7 +93,7 @@ function editar(req, res) {
     var novaDescricao = req.body.descricao;
     var idAviso = req.params.idAviso;
 
-    avisoModel.editar(novaDescricao, idAviso)
+    comentariosModel.editar(novaDescricao, idAviso)
         .then(
             function (resultado) {
                 res.json(resultado);
@@ -111,7 +112,7 @@ function editar(req, res) {
 function deletar(req, res) {
     var idAviso = req.params.idAviso;
 
-    avisoModel.deletar(idAviso)
+    comentariosModel.deletar(idAviso)
         .then(
             function (resultado) {
                 res.json(resultado);

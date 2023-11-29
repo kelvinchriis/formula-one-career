@@ -62,7 +62,11 @@ create table usuario (
     constraint fkPerfil foreign key(fk_perfil) references perfil(idPerfil)
 );
 
-create table comentario (
+create table comentarios (
     idComentario int primary key auto_increment,
     comentario varchar(1000),
+    dataComent date,
+    imagem varchar(255),
+    fkPerfilComent int,
+    constraint  fkPerfilComent foreign key(fkPerfilComent) references perfil(idPerfil)
 );

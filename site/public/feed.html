@@ -52,10 +52,14 @@
             width: 100%;
         }
 
-        .img-user {
+        .img-user-coment {
             margin: 0;
             width: 50px;
             height: 50px;
+            border-radius: 50%;
+            background-color: white;
+            background-image: url("../assets/index/user.jpg");
+            background-size: cover;
         }
 
         .content-coment {
@@ -84,15 +88,16 @@
             background-color: rgba(100, 0, 0, 0.2);
             margin: 0;
         }
+
         .perfil-link {
-            cursor: pointer; 
-            display: flex; 
+            cursor: pointer;
+            display: flex;
             align-items: center;
         }
     </style>
 </head>
 
-<body>
+<body onload="listar_coments()">
     <div style="display: flex; width: 100%;">
         <div class="header-left ">
             <!-- home -->
@@ -116,68 +121,122 @@
                 style="color: #000000; margin-bottom: 46px; cursor: pointer;"></i>
         </div>
         <div class="dash">
+            <div class="over" id="over" style="display: none; position: absolute; align-items: flex-start;">
+                <div style="width: 7%; margin-top: 10px; display: flex; justify-content: flex-end; position: fixed;">
+                    <div
+                        id="botao" onclick="voltar()" style="width: 200px; user-select: none; cursor: pointer; height: 40px; border-radius: 20px; display: flex; justify-content: center; align-items: center;">
+                        <img src="assets/index/voltar.png" style="width: 30px;" alt="">    
+                        <h1 style="margin: 0;" >Voltar</h1>
+                    </div>
+                </div>
+                <div style="display: flex; width: 100%; align-items: center; justify-content: center; margin-top: 30px;">
+                    <div
+                        style=" width: 800px; height: 700px; border-radius: 20px; background-color: rgba(0, 0, 0, 0.2); margin-top: 20px; padding: 0 20px;">
+                        <div
+                            style="display: flex; width: 100%; height: 300px; justify-content: space-between; margin-top: 10px;">
+                            <div class="box-escuderia" style="height: 80%; width: 35%; margin-bottom: 0; margin: 0; ">
+                                <img style="width: 70%;" id="img_scud">
+                            </div>
+    
+                            <div class="box-car" style="height: 80%; margin: 0;  width: 53%;">
+                                <label style="font-size: 18pt"></label>
+                                <img id="img_car">
+                            </div>
+                        </div>
+                        <div
+                            style="display: flex; width: 100%; height: 400px;  justify-content: space-between; margin: 0;">
+                            <div class="card-pilot" data-id="1"
+                                style="margin: 0; width: 55%; height: 430px;  height: 90%;">
+                                <h1 style="margin: 0;" id="nome_pilot"></h1>
+                                <img class="img-pilot" id="img_pilot">
+                            </div>
+                            <div class="card" style="margin: 0; height: 90%; ">
+                                <img id="img_circuit" style="width: 100%">
+                                <div>
+                                    <div class="line-card">
+                                        <div class="data-card">
+                                            <span>Primeiro Grande Prêmio</span>
+                                            <h2>2004</h2>
+                                        </div>
+                                        <div class="data-card">
+                                            <span>Número de Voltas</span>
+                                            <h2>57</h2>
+                                        </div>
+                                    </div>
+                                    <div class="line-card">
+                                        <div class="data-card">
+                                            <span>Comprimento do circuito</span>
+                                            <h2>5.412 KM</h2>
+                                        </div>
+                                        <div class="data-card">
+                                            <span>Distância da corrida</span>
+                                            <h2>308 KM</h2>
+                                        </div>
+                                    </div>
+    
+                                </div>
+                            </div>
+    
+    
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: center; width: 400px;">
+                        <div style="display: flex; flex-direction: column; width: 100%; align-items: center;">
+                            <div class="img-user" style="border: 2px solid red;" id="img_user_profile" style="margin: 0 0 30px 0;"></div>
+                            
+                            <div style="width: 80%; text-align: center;">
+                                <h2 class="titulo-profile">Username</h2>
+                                <h2 class="content-json" id="nome"></h2>
+                                <h2 class="titulo-profile">Nacionalidade</h2>
+                                <h2 class="content-json" id="nasci"></h2>
+                                <h2 class="titulo-profile">Data Nascimento</h2>
+                                <h2 class="content-json" id="dtnasc"></h2>
+                                <h2 class="titulo-profile">Número carro</h2>
+                                <h2 class="content-json" style="font-size: 10pt; font-weight: 0;" id="num"></h2>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
             <div class="main" id="initt">
 
                 <div class="content-coment">
                     <div class="coment make">
                         <div class="perfil">
-                            <div class="perfil-link">
-                                <div class="img-user img-user" id="img-user"></div>
-                                <h1 style="margin: 0 0 0 6px;" id="user">kelvin</h1>
+                            <div class="perfil-link" id="perfil_link">
+                                <div class="img-user-coment" id="img_user"></div>
+                                <h1 style="margin: 0 0 0 6px;" id="user"></h1>
                             </div>
                         </div>
                         <div class="coment-com">
-                            <textarea class="textarea" rows="6" cols="40" style="width: 90%;" id="inputBiografia"
+                            <textarea class="textarea" rows="6" cols="40" style="width: 90%;" id="inputComent"
                                 placeholder="Faça um comentário" maxlength="150" style="margin-bottom: 10px"></textarea>
                         </div>
                         <div id="drop-area" ondragover="manipularArrastarSobre(event)" ondrop="manipularSoltar(event)"
                             ondragenter="manipularEntradaArrastar(event)" ondragleave="manipularSaidaArrastar(event)">
                             <h1 style="margin: 0; font-size: 12pt;">Arraste sua imagem</h1>
-                            <input type="file" id="fileInput" accept="image/*" onchange="selecionarImg(event)" style="display: none;">
-                            <label style="padding: 10px; background-color: rgb(161, 36, 36); border-radius: 10px; color: white; cursor: pointer;" for="fileInput">Buscar</label>
+                            <input type="file" id="foto" accept="image/*" onchange="selecionarImg(event)"
+                                style="display: none;">
+                            <label
+                                style="padding: 10px; background-color: rgb(161, 36, 36); border-radius: 10px; color: white; cursor: pointer;"
+                                for="foto">Buscar</label>
                         </div>
 
                         <div id="preview"></div>
-
+                        <button onclick="publicar()">publicar</button>
                     </div>
                 </div>
 
-                <div class="content-coment">
+                <div class="content-coment" id="coments">
 
-
-                    <div class="coment">
-                        <div class="perfil">
-                            <div class="perfil-link">
-                                <div class="img-user img-user" id="img-user"></div>
-                                <h1 style="margin: 0 0 0 6px;"></h1>
-                            </div>
-                        </div>
-                        <div class="coment-com">
-                            <h1 class="h1-coment">Hoje estava assistindo formula batendo punheta até que o max verstapem
-                                fazendo a curva do S ai não aguentei, foi tiro e queda, gozei na mesma hora</h1>
-                        </div>
-                        <img src="assets/index/grid-charle-leclerc.jpg" alt="">
-                        <div style="width: 95%; text-align: right;">
-                            <h3 style="margin: 0;">27/11/2023 14:01</h3>
-                        </div>
-                    </div>
-
-                    <div class="coment">
-                        <div class="perfil">
-                            <div class="img-user img-user" id="img-user"></div>
-                            <h1 style="margin: 0 0 0 6px;">kelvin</h1>
-                        </div>
-                        <div class="coment-com">
-                            <h1 class="h1-coment">Hoje estava assistindo formula batendo punheta até que o max verstapem
-                                fazendo a curva do S ai não aguentei, foi tiro e queda, gozei na mesma hora</h1>
-                        </div>
-                        <img src="assets/index/grid-charle-leclerc.jpg" alt="">
-                    </div>
-
+                    <!-- comentario aqui -->
 
                 </div>
+
             </div>
         </div>
+        <script src="js/buscar_perfil.js"></script>
 </body>
 
 </html>
@@ -186,6 +245,10 @@
 
 <script>
 
+    perfil_link.setAttribute('data-id', sessionStorage.FK_PERFIL)
+    perfil_link.addEventListener('click', selectPerfil);
+
+    img_user.style.backgroundImage = `url('assets/usuarios/${sessionStorage.IMAGEM}')`
     user.innerHTML = sessionStorage.NOME_USUARIO
 
     function manipularArrastarSobre(event) {
@@ -242,3 +305,83 @@
 select c.*, p.username from comentarios as c join perfil as p on fkPerfilComent = idPerfil order by dataComent desc;
 -- listar do user
 select c.*, p.username from comentarios as c join perfil as p on fkPerfilComent = idPerfil where p.idPerfil = 1 order by dataComent desc; -->
+
+<script>
+    function publicar() {
+        preview.innerHTML = ""
+        var comentario = inputComent.value
+        inputComent.value = ""
+        var formData = new FormData();
+        formData.append('foto', foto.files[0])
+        formData.append('comentario', comentario)
+        formData.append('id_user', sessionStorage.FK_PERFIL);
+
+        if(comentario == "") return false
+
+        fetch(`/comentarios/publicar`, {
+          method: "POST",
+          body: formData,
+        })
+          .then(function (resposta) {
+            console.log("resposta: ", resposta);
+      
+            if (resposta.ok) {
+                listar_coments() 
+            } else {
+              throw "Houve um erro ao tentar realizar o cadastro!";
+            }
+          })
+          .catch(function (resposta) {
+            console.log(`#ERRO: ${resposta}`);
+          });
+      
+        return false;
+    }
+
+    function listar_coments() {
+        coments.innerHTML = ``
+        fetch(`comentarios/listar/`, {
+            method: "GET",
+        })
+            .then(function (response) {
+                if (!response.ok) {
+                    throw new Error('Erro ao carregar os dados');
+                }
+                return response.json();
+            })
+            .then(function (comentario) {
+                console.log(comentario);
+
+                if (!comentario || comentario.length === 0) {
+                    console.error('Nenhum dado de perfil encontrado.');
+                    return;
+                }
+                for(i=comentario.length-1; i>=0; i--) {
+                    coments.innerHTML += `
+                        <div class="coment">
+                            <div class="perfil">
+                                <div class="perfil-link" data-id="${comentario[i].idPerfil}">
+                                    <div class="img-user-coment" style="background-image: url('assets/usuarios/${comentario[i].imagem}');"></div>
+                                    <h1 style="margin: 0 0 0 6px;" id="user">${comentario[i].username}</h1>
+                                </div>
+                            </div>
+                            <div class="coment-com">
+                                <h1 class="h1-coment">${comentario[i].comentario}</h1>
+                            </div>
+                            <img src="assets/usuarios/${comentario[i].img_coment}" alt="">
+                            <div style="width: 95%; text-align: right;">
+                                <h3 style="margin: 0;">${comentario[i].dataComent}</h3>
+                            </div>
+                        </div>
+                    `   
+                }
+                var perfil = document.querySelectorAll('.perfil-link');
+                for (var i = 0; i < perfil.length; i++) {
+                    perfil[i].addEventListener('click', selectPerfil);
+                }
+            })
+            .catch(function (error) {
+                console.error('Erro:', error);
+            });
+    }
+</script>
