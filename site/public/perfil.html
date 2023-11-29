@@ -31,23 +31,24 @@
 	<div style="display: flex; width: 100%;">
 		<div class="header-left ">
 			<!-- home -->
-            <a href="tela_inicial.html">
-                <i class="fa-solid fa-house fa-2xl" style="color: #000000;margin-bottom: 35px; cursor: pointer;"></i>
-            </a>
-            <!-- busca perfil -->
-            <a href="profiles.html">
-                <img src="assets/index/user-black.png" style="width: 42px; height: auto; margin-bottom: 25px; cursor: pointer;">
-            </a>
-            <!-- perfil pessoal -->
-            <a href="#">
-                <i class="fa-solid fa-user fa-2xl" style="color: #ffffff;margin-bottom: 50px; cursor: pointer;"></i>
-            </a>
-            <a href="graf.html">
-                <i class="fa-solid fa-star fa-2xl" style="color: #000000;margin-bottom: 55px; cursor: pointer;"></i>
-            </a>
-            <!-- sair -->
-            <i onclick="sair()" class="fa-solid fa-right-from-bracket fa-2xl"
-                style="color: #000000; margin-bottom: 46px; cursor: pointer;"></i>
+			<a href="tela_inicial.html">
+				<i class="fa-solid fa-house fa-2xl" style="color: #000000;margin-bottom: 35px; cursor: pointer;"></i>
+			</a>
+			<!-- busca perfil -->
+			<a href="profiles.html">
+				<img src="assets/index/user-black.png"
+					style="width: 42px; height: auto; margin-bottom: 25px; cursor: pointer;">
+			</a>
+			<!-- perfil pessoal -->
+			<a href="#">
+				<i class="fa-solid fa-user fa-2xl" style="color: #ffffff;margin-bottom: 50px; cursor: pointer;"></i>
+			</a>
+			<a href="graf.html">
+				<i class="fa-solid fa-star fa-2xl" style="color: #000000;margin-bottom: 55px; cursor: pointer;"></i>
+			</a>
+			<!-- sair -->
+			<i onclick="sair()" class="fa-solid fa-right-from-bracket fa-2xl"
+				style="color: #000000; margin-bottom: 46px; cursor: pointer;"></i>
 		</div>
 		<div class="dash">
 			<!-- create perfil init -->
@@ -77,13 +78,14 @@
 				<img src="assets/index/load.gif" style="width: 50px;" alt="">
 			</div>
 			<div class="main" id="profilee" style="display: none; align-items: center;">
-				<div style="display: flex; width: 100%; align-items: center; justify-content: center; margin-top: 15px;">
+				<div
+					style="display: flex; width: 100%; align-items: center; justify-content: center; margin-top: 15px;">
 					<div
 						style=" width: 800px; height: 700px; border-radius: 20px; background-color: rgba(0, 0, 0, 0.2); margin-top: 20px; padding: 0 20px;">
 						<div
 							style="display: flex; width: 100%; height: 300px; justify-content: space-between; margin-top: 10px;">
 							<div class="box-escuderia" style="height: 80%; width: 35%; margin-bottom: 0; margin: 0; ">
-								<img style="width: 80%;" id="img_scud">
+								<img style="width: 70%;" id="img_scud">
 							</div>
 
 							<div class="box-car" data-id="65" style="height: 80%; margin: 0;  width: 53%;">
@@ -95,7 +97,7 @@
 							style="display: flex; width: 100%; height: 400px;  justify-content: space-between; margin: 0;">
 							<div class="card-pilot" data-id="1"
 								style="margin: 0; width: 55%; height: 430px;  height: 90%;">
-								<h1 style="margin: 0;"></h1>
+								<h1 style="margin: 0;" id="nome_pilot"></h1>
 								<img class="img-pilot" id="img_pilot">
 							</div>
 							<div class="card" data-id="1" style="margin: 0; height: 90%; ">
@@ -130,13 +132,13 @@
 					</div>
 					<div style="display: flex; align-items: center; width: 400px;">
 						<div style="display: flex; flex-direction: column; width: 100%; align-items: center;">
-							<div class="img-user" id="img-user" style="margin: 0;"></div>
+							<div class="img-user imm" id="img_user" style="margin: 0;"></div>
 							<label class="file-input" style="margin-top: 30px;">
 								<span>Alterar foto</span>
 								<input type="file" id="inputFile" style="font-size: 12pt; width: 300px;"></input>
 							</label>
 							<div style="width: 80%; text-align: center;">
-								<h2 class="titulo-profile">Nome</h2>
+								<h2 class="titulo-profile">Username</h2>
 								<h2 class="content-json" id="nome"></h2>
 								<h2 class="titulo-profile">Nacionalidade</h2>
 								<h2 class="content-json" id="nasci"></h2>
@@ -156,6 +158,26 @@
 </html>
 
 <script type="text/javascript">
+
+	var nomes_pilotos = [
+		'null',
+		'Ayton Senna',
+		'Schumacher',
+		'Hamilton',
+		'Fangio',
+		'Alain Prost',
+		'Niki Lauda',
+		'Jackie Stewart',
+		'Vettel',
+		'Alonso',
+		'Nigell Mansell',
+		'Fittipaldi',
+		'Nelson Piquet',
+		'Jochen Rindt',
+		'Kimi Räikkönen',
+	]
+
+
 	var fk = sessionStorage.FK_PERFIL;
 	if (fk == "null") {
 		initt.style.display = "flex"
@@ -189,15 +211,17 @@
 				var mes = String(data.getUTCMonth() + 1).padStart(2, '0'); // O mês começa do zero, então adicionamos 1
 				var ano = data.getUTCFullYear();
 				var dataFormatada = dia + '-' + mes + '-' + ano;
-
-				nome.innerHTML = `${sessionStorage.NOME_USUARIO}`
+				sessionStorage.IMAGEM = perfil[0].imagem
+				nome.innerHTML = `${perfil[0].username}`
 				nasci.innerHTML = `${perfil[0].nacionalidade}`
 				dtnasc.innerHTML = `${dataFormatada}`
 				num.innerHTML = `${perfil[0].numeroCarro}`
 				img_pilot.src = `assets/pilotos/${perfil[0].fkPilotoInspiracao}.png`
 				img_circuit.src = `./assets/circuitos/${perfil[0].fkPistaPreferida}.png`
+				nome_pilot.innerHTML = `${nomes_pilotos[perfil[0].fkPilotoInspiracao]}`
 				img_scud.src = `assets/escuderias/${perfil[0].fkEquipe}.png`
 				img_car.src = `assets/carros/${perfil[0].fkCarro}.png`
+				img_user.style.backgroundImage = `url('assets/usuarios/${perfil[0].imagem}')`
 				over.style.display = "none"
 			})
 			.catch(function (error) {

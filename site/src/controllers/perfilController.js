@@ -55,15 +55,11 @@ function buscarPorUsername(req, res) {
 }
 
 function cadastrar(req, res) {
-  var username = req.body.username
-  var nacionalidade = req.body.nacionalidade
-  var nasc = req.body.nasc
-  var numero = req.body.numero
-  var biografia = req.body.biografia
-  var equipe = req.body.equipe
-  var carro = req.body.carro
-  var pista = req.body.pista
-  var piloto = req.body.piloto
+  var imagem = req.file.filename;
+
+  const {username, nacionalidade, nasc, numero, biografia, equipe, carro, pista, piloto} = req.body
+
+
 
   if (username == undefined) {
     res.status(400).send("username está undefined!");
@@ -85,7 +81,7 @@ function cadastrar(req, res) {
     res.status(400).send("piloto está undefined!");
   } else {
 
-    perfilModel.cadastrar(username, nacionalidade, nasc, numero, biografia, equipe, carro, pista, piloto)
+    perfilModel.cadastrar(username, nacionalidade, nasc, numero, biografia, equipe, carro, pista, piloto, imagem)
       .then((resultado) => {
         res.status(201).json(resultado);
       }

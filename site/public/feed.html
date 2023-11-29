@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -9,41 +10,88 @@
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
+        #drop-area {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            border: 3px dashed #180e0e75;
+            background-color: rgba(255, 228, 196, 0.555);
+            width: 60%;
+            border-radius: 20px;
+            padding: 20px;
+            text-align: center;
+            margin: 20px;
+        }
+
+        #drop-area.highlight {
+            border-color: purple;
+        }
+
+        #preview {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin-top: 20px;
+        }
+
         .coment {
-            width: 80%; 
-            background-color: azure; 
-            padding: 20px; 
+            width: 80%;
+            background-color: azure;
+            padding: 20px;
             border-radius: 20px;
             margin-bottom: 20px;
             box-shadow: 0 1px 13px rgba(0, 0, 0, 0.39);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
         }
+
         .perfil {
-            display: flex; 
-            align-items: center; 
+            display: flex;
+            align-items: center;
             width: 100%;
         }
+
         .img-user {
-            margin: 0; 
-            width: 50px; 
+            margin: 0;
+            width: 50px;
             height: 50px;
         }
+
         .content-coment {
-            width: 800px; 
-            padding: 30px 0; 
+            width: 800px;
+            padding: 30px 0;
             display: flex;
-            flex-direction: column; 
+            flex-direction: column;
             align-items: center
         }
+
         .coment-com {
-            width: 85%; 
+            width: 85%;
             margin-top: 15px;
         }
+
         .h1-coment {
-            font-size: 12pt; 
+            font-size: 12pt;
             margin: 0 0 15px 0;
+        }
+
+        .textarea {
+            background-color: white;
+        }
+
+        .make {
+            background-color: rgba(100, 0, 0, 0.2);
+            margin: 0;
+        }
+        .perfil-link {
+            cursor: pointer; 
+            display: flex; 
+            align-items: center;
         }
     </style>
 </head>
+
 <body>
     <div style="display: flex; width: 100%;">
         <div class="header-left ">
@@ -53,7 +101,8 @@
             </a>
             <!-- busca perfil -->
             <a href="profiles.html">
-                <img src="assets/index/user-black.png" style="width: 42px; height: auto; margin-bottom: 25px; cursor: pointer;">
+                <img src="assets/index/user-black.png"
+                    style="width: 42px; height: auto; margin-bottom: 25px; cursor: pointer;">
             </a>
             <!-- perfil pessoal -->
             <a href="perfil.html">
@@ -68,16 +117,44 @@
         </div>
         <div class="dash">
             <div class="main" id="initt">
+
+                <div class="content-coment">
+                    <div class="coment make">
+                        <div class="perfil">
+                            <div class="perfil-link">
+                                <div class="img-user img-user" id="img-user"></div>
+                                <h1 style="margin: 0 0 0 6px;" id="user">kelvin</h1>
+                            </div>
+                        </div>
+                        <div class="coment-com">
+                            <textarea class="textarea" rows="6" cols="40" style="width: 90%;" id="inputBiografia"
+                                placeholder="Faça um comentário" maxlength="150" style="margin-bottom: 10px"></textarea>
+                        </div>
+                        <div id="drop-area" ondragover="manipularArrastarSobre(event)" ondrop="manipularSoltar(event)"
+                            ondragenter="manipularEntradaArrastar(event)" ondragleave="manipularSaidaArrastar(event)">
+                            <h1 style="margin: 0; font-size: 12pt;">Arraste sua imagem</h1>
+                            <input type="file" id="fileInput" accept="image/*" onchange="selecionarImg(event)" style="display: none;">
+                            <label style="padding: 10px; background-color: rgb(161, 36, 36); border-radius: 10px; color: white; cursor: pointer;" for="fileInput">Buscar</label>
+                        </div>
+
+                        <div id="preview"></div>
+
+                    </div>
+                </div>
+
                 <div class="content-coment">
 
 
                     <div class="coment">
                         <div class="perfil">
-                            <div class="img-user img-user" id="img-user"></div>
-                            <h1 style="margin: 0 0 0 6px;">kelvin</h1>
+                            <div class="perfil-link">
+                                <div class="img-user img-user" id="img-user"></div>
+                                <h1 style="margin: 0 0 0 6px;"></h1>
+                            </div>
                         </div>
                         <div class="coment-com">
-                            <h1 class="h1-coment">Hoje estava assistindo formula batendo punheta até que o max verstapem fazendo a curva do S ai não aguentei, foi tiro e queda, gozei na mesma hora</h1>
+                            <h1 class="h1-coment">Hoje estava assistindo formula batendo punheta até que o max verstapem
+                                fazendo a curva do S ai não aguentei, foi tiro e queda, gozei na mesma hora</h1>
                         </div>
                         <img src="assets/index/grid-charle-leclerc.jpg" alt="">
                         <div style="width: 95%; text-align: right;">
@@ -91,7 +168,8 @@
                             <h1 style="margin: 0 0 0 6px;">kelvin</h1>
                         </div>
                         <div class="coment-com">
-                            <h1 class="h1-coment">Hoje estava assistindo formula batendo punheta até que o max verstapem fazendo a curva do S ai não aguentei, foi tiro e queda, gozei na mesma hora</h1>
+                            <h1 class="h1-coment">Hoje estava assistindo formula batendo punheta até que o max verstapem
+                                fazendo a curva do S ai não aguentei, foi tiro e queda, gozei na mesma hora</h1>
                         </div>
                         <img src="assets/index/grid-charle-leclerc.jpg" alt="">
                     </div>
@@ -101,8 +179,65 @@
             </div>
         </div>
 </body>
+
 </html>
 
+
+
+<script>
+
+    user.innerHTML = sessionStorage.NOME_USUARIO
+
+    function manipularArrastarSobre(event) {
+        event.preventDefault();
+    }
+
+    function manipularEntradaArrastar(event) {
+        event.preventDefault();
+        document.getElementById('drop-area').classList.add('highlight');
+    }
+
+    function manipularSaidaArrastar(event) {
+        event.preventDefault();
+        document.getElementById('drop-area').classList.remove('highlight');
+    }
+
+    function manipularSoltar(event) {
+        event.preventDefault();
+        document.getElementById('drop-area').classList.remove('highlight');
+
+        const files = event.dataTransfer.files;
+        if (files.length > 0) {
+            imagemSelecionada(files[0]);
+        }
+    }
+
+    function selecionarImg(event) {
+        const imagem = event.target.files;
+        if (imagem.length > 0) {
+            imagemSelecionada(imagem[0]);
+        }
+    }
+
+    function imagemSelecionada(file) {
+        if (file.type.startsWith('image/')) {
+            const reader = new FileReader();
+            reader.onload = function (event) {
+                const img = new Image();
+                img.src = event.target.result;
+                img.onload = function () {
+                    const preview = document.getElementById('preview');
+                    preview.innerHTML = '';
+                    preview.style.width = "100%"
+                    preview.appendChild(img);
+                };
+            };
+            reader.readAsDataURL(file);
+        } else {
+            alert('Por favor, selecione um arquivo de imagem.');
+        }
+    }
+</script>
 <!-- -- listar todos
 select c.*, p.username from comentarios as c join perfil as p on fkPerfilComent = idPerfil order by dataComent desc;
 -- listar do user

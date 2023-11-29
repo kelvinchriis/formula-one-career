@@ -13,7 +13,7 @@ function meuPerfil(fkPerfil) {
 }
 
 function buscarPerfil(username) {
-  var query = `select username, idPerfil from perfil where username like '${username}%'`;
+  var query = `select username, idPerfil, imagem from perfil where username like '${username}%'`;
   console.log("Executando a instrução SQL: \n" + query);
   return database.executar(query);
 }
@@ -24,8 +24,8 @@ function implementarFkPerfil(fkPerfil, idUser) {
   return database.executar(instrucao);
 }
 
-function cadastrar(username, nacionalidade, nasc, numero, biografia, equipe, carro, pista, piloto) {
-  var query = `insert into perfil values (null, '${username}', '${nasc}', '${nacionalidade}', ${numero},' ${biografia}', ${equipe}, ${carro}, ${pista}, ${piloto})`;
+function cadastrar(username, nacionalidade, nasc, numero, biografia, equipe, carro, pista, piloto, imagem) {
+  var query = `insert into perfil values (null, '${username}', '${nasc}', '${nacionalidade}', ${numero},' ${biografia}', ${equipe}, ${carro}, ${pista}, ${piloto}, '${imagem}')`;
   console.log("Executando a instrução SQL: \n" + query);
   return database.executar(query);
 }

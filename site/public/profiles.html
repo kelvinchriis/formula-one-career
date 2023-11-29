@@ -9,11 +9,16 @@
         integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <style>
-        h2-perfil {
-            font-size: 10pt;
-            font-weight: 100;
-            font-family: Arial, Helvetica, sans-serif;
-        }
+        .titulo-profile {
+			margin: 15px 0 0 0;
+			font-size: 20px;
+		}
+
+		.content-json {
+			margin: 0;
+			font-family: f2, sans-serif;
+			font-size: 15px;
+		}
     </style>
 </head>
 <body>
@@ -41,13 +46,14 @@
         
         <div class="dash">
             <div class="over" id="over" style="display: none; position: absolute; align-items: flex-start;">
-                <div style="width: 95%; margin-top: 10px; display: flex; justify-content: flex-end;">
+                <div style="width: 7%; margin-top: 10px; display: flex; justify-content: flex-end; position: fixed;">
                     <div
-                        id="botao" style="width: 200px; user-select: none; cursor: pointer; height: 60px; border-radius: 20px; background-color: black; color: white; display: flex; justify-content: center; align-items: center;">
-                            <h1 style="margin: 0;" onclick="voltar()">Voltar</h1>
+                        id="botao" onclick="voltar()" style="width: 200px; user-select: none; cursor: pointer; height: 40px; border-radius: 20px; display: flex; justify-content: center; align-items: center;">
+                        <img src="assets/index/voltar.png" style="width: 30px;" alt="">    
+                        <h1 style="margin: 0;" >Voltar</h1>
                     </div>
                 </div>
-                <div style="display: flex; width: 100%; align-items: center; justify-content: center;">
+                <div style="display: flex; width: 100%; align-items: center; justify-content: center; margin-top: 30px;">
                     <div
                         style=" width: 800px; height: 700px; border-radius: 20px; background-color: rgba(0, 0, 0, 0.2); margin-top: 20px; padding: 0 20px;">
                         <div
@@ -100,10 +106,10 @@
                     </div>
                     <div style="display: flex; align-items: center; width: 400px;">
                         <div style="display: flex; flex-direction: column; width: 100%; align-items: center;">
-                            <div class="img-user" id="img-user" style="margin: 0 0 30px 0;"></div>
+                            <div class="img-user" style="border: 2px solid red;" id="img_user_profile" style="margin: 0 0 30px 0;"></div>
                             
                             <div style="width: 80%; text-align: center;">
-                                <h2 class="titulo-profile">Nome</h2>
+                                <h2 class="titulo-profile">Username</h2>
                                 <h2 class="content-json" id="nome"></h2>
                                 <h2 class="titulo-profile">Nacionalidade</h2>
                                 <h2 class="content-json" id="nasci"></h2>
@@ -187,12 +193,22 @@
 
                 show_users.innerHTML = "";
                 perfisFiltrados.forEach(perfil => {
-                    show_users.innerHTML += `
-                        <div class="card-user" data-id="${perfil.idPerfil}">
-                            <h1 id="name_user">${perfil.username}</h1>
-                            <div class="img-user" id="img_user"></div>
-                        </div>
-                    `;
+                    if(perfil.imagem == null){
+                        show_users.innerHTML += `
+                            <div class="card-user" data-id="${perfil.idPerfil}">
+                                <h1 id="name_user">${perfil.username}</h1>
+                                <div class="img-user imm" id="img_user"></div>
+                            </div>
+                        `;
+                    } else {
+                        show_users.innerHTML += `
+                            <div class="card-user" data-id="${perfil.idPerfil}">
+                                <h1 id="name_user">${perfil.username}</h1>
+                                <div class="img-user imm" style="background-image: url('assets/usuarios/${perfil.imagem}');" id="img_user"></div>
+                            </div>
+                        `;
+                    }
+                    
                     perfisExibidos.push(perfil.username);
                 });
                 var card = document.querySelectorAll('.card-user');
@@ -210,7 +226,6 @@
     function selectPerfil() {
         var id = this.getAttribute('data-id');
         perfil_user = id
-        over.style.display = "block"
         initt.style.display = "none"
         buscarPerfil(perfil_user)
     }
@@ -245,10 +260,17 @@
 				dtnasc.innerHTML = `${dataFormatada}`
                 nome_pilot.innerHTML = `${nomes_pilotos[perfil[0].fkPilotoInspiracao]}`
 				num.innerHTML = `${perfil[0].numeroCarro}`
-				img_pilot.src = `assets/pilotos/${perfil[0].fkPilotoInspiracao}.png`
-				img_circuit.src = `./assets/circuitos/${perfil[0].fkPistaPreferida}.png`
 				img_scud.src = `assets/escuderias/${perfil[0].fkEquipe}.png`
 				img_car.src = `assets/carros/${perfil[0].fkCarro}.png`
+				img_pilot.src = `assets/pilotos/${perfil[0].fkPilotoInspiracao}.png`
+				img_circuit.src = `./assets/circuitos/${perfil[0].fkPistaPreferida}.png`
+                if(perfil[0].imagem != null) {
+                    img_user_profile.style.backgroundImage = `url('assets/usuarios/${perfil[0].imagem}')`
+                } else {
+                    img_user_profile.style.backgroundImage = `url('assets/index/user.jpg')`
+                    
+                }
+                over.style.display = "block"
 			})
 			.catch(function (error) {
 				console.error('Erro:', error);

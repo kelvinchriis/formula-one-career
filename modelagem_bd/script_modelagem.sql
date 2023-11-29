@@ -46,6 +46,7 @@ create table perfil (
     fkCarro int,
     fkPistaPreferida int,
     fkPilotoInspiracao int,
+    imagem varchar(255);
     constraint fkPistaPrefe foreign key(fkPistaPreferida) references pista(idPista),
     constraint fkInspiracao foreign key(fkPilotoInspiracao) references piloto(idPiloto),
     constraint fkEquipe foreign key(fkEquipe) references equipe(idEquipe),
@@ -59,4 +60,9 @@ create table usuario (
     senha varchar(45),
     fk_perfil int,
     constraint fkPerfil foreign key(fk_perfil) references perfil(idPerfil)
+);
+
+create table comentario (
+    idComentario int primary key auto_increment,
+    comentario varchar(1000),
 );
