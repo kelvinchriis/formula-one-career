@@ -1,0 +1,37 @@
+Ferrari - id: 1
+range ids: 1 - 22 
+qtd: 22 carros
+
+Mercedes - id: 2
+range ids: 23 - 39 
+qtd: 16 carros
+
+Red Bull - id: 3 
+range ids: 40 - 58 
+qtd: 18 carros
+
+Williams - id: 4 
+range ids: 59 - 79 
+qtd: 20 carros
+
+McLaren -  - id: 5
+range ids: 80 - 101 
+qtd: 22 carros
+
+as equipes tem os ids de 1 a 5, que foram os que vc gerou para cada nome, agora quero
+que gere outro numero que ficara ao lado splitado tbm, use esse padrão
+
+se for id: 1
+gere de 1 - 22 
+
+se for id: 2
+gere de 23 - 39 
+
+se for id: 3 
+gere de 40 - 58 
+
+se for id: 4 
+gere de 59 - 79 
+
+se for id: 5
+gere de 23 - 39 
