@@ -522,17 +522,18 @@ textarea {
 .file-input input[type="file"] {
     display: none;
 }
+
 .imm {
     border: 2px solid red;
 }
 
 .titulo-profile {
-			margin: 15px 0 0 0;
-			font-size: 20px;
-		}
+    margin: 15px 0 0 0;
+    font-size: 20px;
+}
 
-		.content-json {
-			margin: 0;
-			font-family: f2, sans-serif;
-			font-size: 15px;
-		}
+.content-json {
+    margin: 0;
+    font-family: f2, sans-serif;
+    font-size: 15px;
+}

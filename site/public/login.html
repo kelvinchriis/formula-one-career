@@ -5,10 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <link rel="stylesheet" href="style/login.css">
+    <link rel="stylesheet" href="style/carreira.css">
+    <style type="text/css">
+        input {
+            margin: 40px;
+        }
+    </style>
 </head>
 <body>
+    <div style="display: flex; width: 100%; height: 80px; position: fixed; z-index: 999; align-items: center;">
+        <a href="index.html">
+            <div class="inline_cad" style="height: 30px;">
+                <h1 style="margin; 0; font-size: 10pt; color: white;">INÍCIO</h1>
+            </div>
+        </a>
+    </div>
     <div class="container">
         <div class="content">
+            <div style="width: 100%; height: 30px">
+                <a href="cadastro.html">
+                <div class="inline_cad">
+                        <h1 style="margin; 0; font-size: 10pt; color: white;">CADASTRO</h1>
+                </div>
+                </a>
+            </div>
+            <h2 style="margin: 0 0 0 0; color: white; font-size: 20pt;">Login</h2>
             <input type="email" placeholder="Email" id="inputEmail">
             <input type="password" placeholder="Senha" id="inputSenha">
             <button onclick="entrar()">Entrar</button>
@@ -25,7 +46,12 @@
         var senhaVar = inputSenha.value;
 
         if (emailVar == "" || senhaVar == "") {
-            alert("Senha ou emal inválido")
+            if(emailVar == "") inputEmail.placeholder = "Preecha seu email"
+            if(senhaVar == "") inputSenha.placeholder = "Preecha sua senha"
+            setTimeout(() => {
+                inputEmail.placeholder = "Email"
+                inputSenha.placeholder = "Senha"
+        }, 2000)
             return false;
         }
         else {

@@ -6,6 +6,12 @@ insert into equipe values
 	(2, "Mercedes-Benz", "Alemanha", 1954, "Toto Wolff"),
 	(3, "Red Bull Racing", "Reino Unido", 2004, "Christian Horner"),
     (4, "Williams Racing", "Reino Unido", 1977, "James Vowles");
+    (5, "McLaren", "Reino Unido", 1966, "Andreas Seidl");
+    (6, "Alpine", "França", 1977, "Davide Brivio");
+    (7, "Aston Martin", "Reino Unido", 1959, "Otmar Szafnauer");
+    (8, "Alfa Romeo Racing", "Suíça", 1910, "Frédéric Vasseur");
+    (9, "Haas", "Estados Unidos", 2016, "Guenther Steiner");
+    (10, "AlphaTauri", "Itália", 2006, "Franz Tost");
     
 insert into carro values 
 (1, 1950, "Ferrari 125 F1", 1),

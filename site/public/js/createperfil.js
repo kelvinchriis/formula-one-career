@@ -23,14 +23,14 @@
       
         var formData = new FormData();
         formData.append('foto', foto.files[0])
-        formData.append('username', inputUsername.value);
-        formData.append('nacionalidade', inputNacionalidade.value);
-        formData.append('nasc', inputDtNasc.value);
-        formData.append('numero', inputNumero.value);
-        formData.append('biografia', inputBiografia.value);
-        formData.append('equipe', escuderia);
-        formData.append('carro', carro);
-        formData.append('pista', pista);
+        formData.append('username', inputUsername.value)
+        formData.append('nacionalidade', inputNacionalidade.value)
+        formData.append('nasc', inputDtNasc.value)
+        formData.append('numero', inputNumero.value)
+        formData.append('biografia', inputBiografia.value)
+        formData.append('equipe', escuderia)
+        formData.append('carro', carro)
+        formData.append('pista', pista)
         formData.append('piloto', piloto);
       
         if (

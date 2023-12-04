@@ -104,10 +104,12 @@ img {
 }
 .car-grid-size-left {
     height: 70%;
+    margin-left: 200px;
 }
 .car-grid-size-right {
     height: 70%;
 }
 .car-right {
     transform: scaleY(-1) rotate(180deg);
+    margin-right: 200px;
 }

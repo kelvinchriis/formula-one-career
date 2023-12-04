@@ -31,24 +31,27 @@
 	<div style="display: flex; width: 100%;">
 		<div class="header-left ">
 			<!-- home -->
-			<a href="tela_inicial.html">
-				<i class="fa-solid fa-house fa-2xl" style="color: #000000;margin-bottom: 35px; cursor: pointer;"></i>
-			</a>
-			<!-- busca perfil -->
-			<a href="profiles.html">
-				<img src="assets/index/user-black.png"
-					style="width: 42px; height: auto; margin-bottom: 25px; cursor: pointer;">
-			</a>
-			<!-- perfil pessoal -->
-			<a href="#">
-				<i class="fa-solid fa-user fa-2xl" style="color: #ffffff;margin-bottom: 50px; cursor: pointer;"></i>
-			</a>
-			<a href="graf.html">
-				<i class="fa-solid fa-star fa-2xl" style="color: #000000;margin-bottom: 55px; cursor: pointer;"></i>
-			</a>
-			<!-- sair -->
-			<i onclick="sair()" class="fa-solid fa-right-from-bracket fa-2xl"
-				style="color: #000000; margin-bottom: 46px; cursor: pointer;"></i>
+            <a href="tela_inicial.html">
+                <i class="fa-solid fa-house fa-2xl" style="color: #000000;margin-bottom: 35px; cursor: pointer;"></i>
+            </a>
+            <!-- busca perfil -->
+            <a href="profiles.html">
+                <img src="assets/index/user-black.png" style="width: 42px; height: auto; margin-bottom: 25px; cursor: pointer;">
+            </a>
+            <!-- feed coment -->
+            <a href="feed.html">
+                <i class="fa-solid fa-comments fa-2xl" style="color: #000000; margin-bottom: 50px; cursor: pointer;"></i>
+            </a>
+            <!-- perfil pessoal -->
+            <a href="#">
+                <i class="fa-solid fa-user fa-2xl" style="color: #ffffff;margin-bottom: 50px; cursor: pointer;"></i>
+            </a>
+            <a href="graf.html">
+                <i class="fa-solid fa-star fa-2xl" style="color: #000000;margin-bottom: 55px; cursor: pointer;"></i>
+            </a>
+            <!-- sair -->
+            <i onclick="sair()" class="fa-solid fa-right-from-bracket fa-2xl"
+                style="color: #000000; margin-bottom: 46px; cursor: pointer;"></i>
 		</div>
 		<div class="dash">
 			<!-- create perfil init -->
@@ -222,7 +225,9 @@
 				img_scud.src = `assets/escuderias/${perfil[0].fkEquipe}.png`
 				img_car.src = `assets/carros/${perfil[0].fkCarro}.png`
 				img_user.style.backgroundImage = `url('assets/usuarios/${perfil[0].imagem}')`
-				over.style.display = "none"
+				setTimeout(() => {
+                        over.style.display = "none"
+                }, 1000)
 			})
 			.catch(function (error) {
 				console.error('Erro:', error);
