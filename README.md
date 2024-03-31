@@ -4,7 +4,7 @@
 
 
 1. Crie, no Banco de Dados, as tabelas necessárias para o funcionamento deste projeto.
-- Siga as instruções no arquivo para criar o banco de dados **/site/src/database/script_modelagem.sql**
+- Siga as instruções no arquivo para criar o banco de dados **<a href="https://github.com/kelvinchriis/formula-one-career/blob/main/modelagem_bd/script_modelagem.sql">/site/src/database/script_modelagem.sql</a>**
 - Logo após criar todas tabelas, para inserir os dados, siga as intruções **/site/src/database/script_insert.sql**
 
 
