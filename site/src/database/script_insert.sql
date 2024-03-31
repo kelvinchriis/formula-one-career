@@ -1,5 +1,5 @@
 /* 
-    logo após a criação das tabelas "usuario", "equipe", "pista", e "piloto"
+    logo após a criação das tabelas "equipe", "carro", "pista", "piloto", "perfil", 
     é necessário inserir os seus devidos valores pré definidos, senão a criação
     do perfil não funcionará, pois para criar o perfil são necessárias 4 chaves estrangeiras
     que referenciem um id nas tabelas citadas anteriormente.
