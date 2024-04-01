@@ -50,7 +50,7 @@ Formula-One-Career representa um avanço significativo para a comunidade de fãs
 
 4. Adicione as credenciais de Banco de Dados no arquivo **<a href="https://github.com/kelvinchriis/formula-one-career/blob/main/site/src/database/config.js">/site/src/database/config.js</a>**, seguindo as instruções neste.
 
-5. Acesse o local do diretório **/site** presente neste repositório no seu terminal (GitBash ou VSCode) e execute os comandos abaixo:
+5. Acesse o local do diretório **<a href="https://github.com/kelvinchriis/formula-one-career/tree/main/site">/site</a>** presente neste repositório no seu terminal (GitBash ou VSCode) e execute os comandos abaixo:
 
 ```
 npm i
