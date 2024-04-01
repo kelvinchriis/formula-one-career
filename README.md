@@ -44,7 +44,7 @@ Formula-One-Career representa um avanço significativo para a comunidade de fãs
 - Logo após criar todas tabelas, para inserir os dados, siga as intruções **<a href="https://github.com/kelvinchriis/formula-one-career/blob/main/modelagem_bd/script_insert.sql">/site/src/database/script_insert.sql</a>**
 
 
-3. Acesse o arquivo **/site/app.js** e parametrize o ambiente.
+3. Acesse o arquivo **<a href="https://github.com/kelvinchriis/formula-one-career/blob/main/site/app.js">/site/app.js</a>** e parametrize o ambiente.
 - Se você estiver utilizando o Ambiente de Produção (SQL Server na nuvem Azure, remoto), comente a linha 1 e deixe habilitada a linha 2 onde está o valor **process.env.AMBIENTE_PROCESSO = "producao";**
 - Se você estiver utilizando o Ambiente de Desenvolvimento (MySQL Workbench, local), comente a linha 2 e deixe habilitada a linha 1 onde está o valor **process.env.AMBIENTE_PROCESSO = "desenvolvimento";**
 
