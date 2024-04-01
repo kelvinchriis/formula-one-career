@@ -48,7 +48,7 @@ Formula-One-Career representa um avanço significativo para a comunidade de fãs
 - Se você estiver utilizando o Ambiente de Produção (SQL Server na nuvem Azure, remoto), comente a linha 1 e deixe habilitada a linha 2 onde está o valor **process.env.AMBIENTE_PROCESSO = "producao";**
 - Se você estiver utilizando o Ambiente de Desenvolvimento (MySQL Workbench, local), comente a linha 2 e deixe habilitada a linha 1 onde está o valor **process.env.AMBIENTE_PROCESSO = "desenvolvimento";**
 
-4. Adicione as credenciais de Banco de Dados no arquivo **/site/src/database/config.js**, seguindo as instruções neste.
+4. Adicione as credenciais de Banco de Dados no arquivo **<a href="https://github.com/kelvinchriis/formula-one-career/blob/main/site/src/database/config.js">/site/src/database/config.js</a>**, seguindo as instruções neste.
 
 5. Acesse o local do diretório **/site** presente neste repositório no seu terminal (GitBash ou VSCode) e execute os comandos abaixo:
 
